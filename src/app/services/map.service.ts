@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 
+const VOID = 0;
+const FLOOR = 1;
+const CEIL = 2;
+const WALL = 3;
+
 @Injectable({
   providedIn: 'root'
 })

@@ -10,7 +10,7 @@ import { AssetService } from '../services/asset.service';
 export class MapComponent implements OnInit {
 
   public map: number[][];
-  public assets: {id: number; name: string; url: string}[];
+  public assets: {name: string; url: string}[];
 
   constructor(public mapService: MapService, public assetService: AssetService) { }
 
