@@ -1,4 +1,4 @@
-import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL } from './../state-machine.service';
+import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
