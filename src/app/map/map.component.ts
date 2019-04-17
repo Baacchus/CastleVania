@@ -19,15 +19,4 @@ export class MapComponent implements OnInit {
     this.assets = this.assetService.getAsset();
   }
 
-  @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
-    switch(event.which){
-      case 39:
-        console.log(" >>>  droite ");
-      break;
-      case 37:
-        console.log(" <<<  gauche ");
-      break;
-    }
-  }
-
 }
