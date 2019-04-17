@@ -2,6 +2,9 @@
     font-family: 'bradley_gratis';
     src: url(../../assets/bradleygratis/test.ttf);
 }
+body{
+    background-image: url(../../assets/backgroundWebsite.jpg);
+}
 
 li{
     list-style-type:none;
