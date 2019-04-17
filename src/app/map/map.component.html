@@ -1,19 +1,10 @@
-<body>
-  <h1>Castlevania Quizz</h1>
-  <div id="ecran">
-    <div id="zone">
-      <div id="pers">X</div>
-      <div class="floor"></div>
-      <div id="question1">1</div>
-      <div id="question2">2</div>
-      <div id="question3">3</div>
-      <div id="question4">4</div>
-      <div id="question5">5</div>
-      <div id="question6">6</div>
-      <div id="question7">7</div>
-      <div id="question8">8</div>
-      <div id="question9">9</div>
-      <div id="question10">BOSS</div>
+<div id="screen">
+
+  <div id="map">
+    <div class="row" *ngFor="let row of map">
+      <div class="col" *ngFor="let col of row" [ngStyle]="{'background-image': assets[col].url}">
+      </div>
     </div>
   </div>
-</body>
+
+</div>
