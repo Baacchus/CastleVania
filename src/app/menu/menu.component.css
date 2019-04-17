@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'bradley_gratis';
+    src: url(../../assets/bradleygratis/test.ttf);
+}
+
+li{
+    list-style-type:none;
+    width: 370px;
+    height: auto;
+    background-color: black;
+    vertical-align: middle;
+    margin: 4px;
+    color: #f8d91f;
+    font-family: 'bradley_gratis', arial;
+    font-size: 80px;
+    text-align: center;
+    text-shadow: 10px 5px 5px #c13713, -5px 0 .4em #c13713;
+    border-radius: 15px;
+    background-image: url(../../assets/paper.jpg);
+}
+
+li:hover {
+    font-size: 90px;
+
+}
