@@ -6,24 +6,24 @@ body {
 }
 #background {
   background-size:cover;
-  width: 610px;
-  height: 552px;
+  width: 700px;
+  height: 500px;
   margin:auto;
   border: 20px solid black;
   position: relative;
 }
 .scanlines {
   background-image: url(https://i.imgur.com/3ZzMST5.png);
-  width: 610px;
+  width: 700px;
   height: 552px;
 }
 .banner {
   margin: 5% 0;
   background-color: black;
-  width: 610px;
-  height: 110px;
+  width: 720px;
+  height: 90px;
   position: absolute;
-  top: -31px;
+  top: -35px;
   color: white;
   font: normal 400 1.1em 'Press Start 2P', Monospace, Verdana, sans-serif;
 }

@@ -1,128 +1,22 @@
-body {
-    color: white;
-    text-align: center;
-    /* overflow-x: hidden; */ /* Cache la scroll bar */
-  }
-  
-  #ecran {
-    width: 600px;
-    height: 500px;
-    max-height: 500px;
-    overflow: scroll;
-    
-  }
-  
-  #zone {
-    width: 5000px;
-    height: 500px;
-    max-height: 500px;
-    background-image: url(../../assets/background.jpg);
-  
-  }
-  
-  .floor {
-    position: relative;
-    top: 475px;
-    width: 5000px;
-    height: 25px;
-    background-image: url(../../assets/floor.jpg);
-  }
-  
-  #pers {
-    position: absolute;
-    margin-top: 425px;
-    left: 25px;
-    height: 50px;
-    width: 25px;
-    background-color: red;
-  }
-  
-  #question1 {
-    position: relative;
-    left: 500px;
-    top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: blue;
-  }
-  
-  /* #question2 {
-    position: relative;
-    left: 1000px;
-    top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: green;
-  }
-  
-  #question3 {
-    position: relative;
-    left: 1500px;
-    margin-top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: yellow;
-  }
-  
-  #question4 {
-    position: relative;
-    left: 2000px;
-    margin-top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: violet;
-  }
-  
-  #question5 {
-    position: relative;
-    left: 2500px;
-    margin-top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: cyan;
-  }
-  
-  #question6 {
-    position: relative;
-    left: 3000px;
-    margin-top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: orange;
-  }
-  
-  #question7 {
-    position: relative;
-    left: 3500px;
-    margin-top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: orangered;
-  }
-  
-  #question8 {
-    position: relative;
-    left: 4000px;
-    margin-top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: chocolate;
-  }
-  
-  #question9 {
-    position: relative;
-    left: 4500px;
-    margin-top: 425px;
-    height: 50px;
-    width: 25px;
-    background-color: firebrick;
-  }
-  
-  #question10 {
-    position: relative;
-    left: 4900px;
-    margin-top: 375px;
-    height: 100px;
-    width: 75px;
-    background-color: darkslategrey;
-  } */
+#screen {
+  width: 700px;
+  height: 502px;
+  overflow: scroll;
+  border: 10px solid red;
+}
+
+#map {
+  width: 7000px;
+  height: 500px;
+  background-image: url(../../assets/background.jpg);
+}
+
+.row {
+  height: 50px;
+}
+
+.col {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+}
