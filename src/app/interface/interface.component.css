@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+  margin: 5% 0;
+  padding: 0;
+}
+#background {
+  background-size:cover;
+  width: 610px;
+  height: 552px;
+  margin:auto;
+  border: 20px solid black;
+  position: relative;
+}
+.scanlines {
+  background-image: url(https://i.imgur.com/3ZzMST5.png);
+  width: 610px;
+  height: 552px;
+}
+.banner {
+  margin: 5% 0;
+  background-color: black;
+  width: 610px;
+  height: 110px;
+  position: absolute;
+  top: -31px;
+  color: white;
+  font: normal 400 1.1em 'Press Start 2P', Monospace, Verdana, sans-serif;
+}
+.banner p {
+  line-height: 10px;
+}
+.player-life {
+  background: url("https://i.imgur.com/NBt32sN.png") repeat-x;
+  background-repeat: repeat-x;
+  position: absolute;
+  margin: -18px 0 0 125px;
+  float: left;
+  width: 30px;
+  height: 20px;
+}
+/*.enemy-life {  (QUESTION?)
+  background: url(https://i.imgur.com/c9jbXjQ.png) repeat-x;
+  background-repeat: repeat-x;
+  position: absolute;
+  margin: -30px 0 0 125px;
+  float: left;
+  width: 170px;
+  height: 16px;
+}
+  */
+.score {
+  word-spacing: -15px;
+}
+.time {
+  margin-left: 50px;
+  letter-spacing: 2px;
+}
+
+.stage {
+    margin-left: 90px;
+}
+
+
+
+

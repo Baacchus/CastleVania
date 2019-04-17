@@ -5,17 +5,19 @@ body {
   }
   
   #ecran {
-    width: 888px;
+    width: 600px;
     height: 500px;
     max-height: 500px;
     overflow: scroll;
+    
   }
   
   #zone {
     width: 5000px;
     height: 500px;
     max-height: 500px;
-    background-image: url(../../assets/background.jpg)
+    background-image: url(../../assets/background.jpg);
+  
   }
   
   .floor {
