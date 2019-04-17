@@ -18,5 +18,4 @@ export class MapComponent implements OnInit {
     this.map = this.mapService.getMap();
     this.assets = this.assetService.getAsset();
   }
-
 }
