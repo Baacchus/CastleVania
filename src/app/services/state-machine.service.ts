@@ -10,11 +10,13 @@ export const MOVE_JUMP = 3;
 })
 export class StateMachineService {
   
-  movestate: number;
+  moveState: number;
+  charX: number = 0;
+  charY: number = 0;
 
   constructor() { }
 
   setMoveState(state: number){
-    this.movestate = state;
+    this.moveState = state;
   }
 }
