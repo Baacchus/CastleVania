@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CoordinatesPipe implements PipeTransform {
 
   transform(value: any): any {
-    return value * 50;
+    return ''+(value * 50) + 'px';
   }
 }
