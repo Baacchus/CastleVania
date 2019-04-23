@@ -1,3 +1,10 @@
-<p>
-  map works!
-</p>
+<div id="screen">
+
+  <div id="map">
+    <div class="row" *ngFor="let row of map">
+      <div class="col" *ngFor="let col of row" [ngStyle]="{'background-image': assets[col].url}">
+      </div>
+    </div>
+  </div>
+
+</div>
