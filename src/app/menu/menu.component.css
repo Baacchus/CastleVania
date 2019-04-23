@@ -2,27 +2,37 @@
     font-family: 'bradley_gratis';
     src: url(../../assets/bradleygratis/test.ttf);
 }
-body{
-    background-image: url(../../assets/backgroundWebsite.jpg);
-}
+
 
 li{
     list-style-type:none;
     width: 370px;
     height: auto;
-    background-color: black;
+     /* background-color: black; */
     vertical-align: middle;
     margin: 4px;
-    color: #f8d91f;
+    color: #f6a148;
     font-family: 'bradley_gratis', arial;
     font-size: 80px;
     text-align: center;
-    text-shadow: 10px 5px 5px #c13713, -5px 0 .4em #c13713;
-    border-radius: 15px;
-    background-image: url(../../assets/paper.jpg);
-}
+    text-shadow: 10px 5px 5px black, 30px 0 .4em black;
+     border-radius: 15px;
+    background-image: url(../../assets/flammes.jpeg);
+    background-size: cover;
+ }
 
 li:hover {
     font-size: 90px;
 
 }
+
+
+ #menu{
+    position: absolute;
+    top: 80%;
+    left: 35%;
+   
+ 
+
+} 
+
