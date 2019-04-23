@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { GameloopService } from '../services/gameloop.service';
+import { Component, OnInit } from '@angular/core';
 import { MapService } from '../services/map.service';
 import { AssetService } from '../services/asset.service';
 
@@ -12,11 +13,11 @@ export class MapComponent implements OnInit {
   public map: number[][];
   public assets: {name: string; url: string}[];
 
-  constructor(public mapService: MapService, public assetService: AssetService) { }
+  constructor(public mapService: MapService, public assetService: AssetService, public gameLoop: GameloopService) { }
 
   ngOnInit() {
     this.map = this.mapService.getMap();
     this.assets = this.assetService.getAsset();
+    this.gameLoop.play()
   }
-
 }
