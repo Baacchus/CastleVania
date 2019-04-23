@@ -1,5 +1,6 @@
 import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-player',
@@ -20,6 +21,7 @@ export class PlayerComponent implements OnInit {
       case 39:
         console.log(" >>>  droite ");
         this.stateMachina.setMoveState(MOVE_RIGHT);
+
         break;
       case 37:
         console.log(" <<<  gauche ");

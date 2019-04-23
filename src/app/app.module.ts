@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { AssetService } from './services/asset.service';
 import { GameloopService } from './services/gameloop.service';
+import { CoordinatesPipe } from './coordinates.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    PlayerComponent
+    PlayerComponent,
+    CoordinatesPipe
   ],
   imports: [
     BrowserModule,
