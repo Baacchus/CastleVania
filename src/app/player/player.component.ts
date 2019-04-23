@@ -1,6 +1,5 @@
 import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-player',
