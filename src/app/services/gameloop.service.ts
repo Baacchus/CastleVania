@@ -8,17 +8,17 @@ const  LOOP_INTERVAL = 50;
 })
 export class GameloopService {
 
-  constructor(private stateMachina: StateMachineService) { }
+  constructor(private _stateMachina: StateMachineService) {  }
 
   logic(){
-    if(this.stateMachina.moveState === MOVE_LEFT){
-      this.stateMachina.charX -= 0.1;
+    if(this._stateMachina.moveState === MOVE_LEFT){
+      this._stateMachina.charX -= 0.1;
     }
-    else if(this.stateMachina.moveState === MOVE_RIGHT){
-      this.stateMachina.charX += 0.1;
+    else if(this._stateMachina.moveState === MOVE_RIGHT){
+      this._stateMachina.charX += 0.1;
     }
     
-    setInterval(this.logic, LOOP_INTERVAL);
+    setInterval( () => this.logic(), LOOP_INTERVAL);
   }
 
   play(){

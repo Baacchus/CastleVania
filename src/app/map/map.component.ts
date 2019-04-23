@@ -1,4 +1,4 @@
-import { GameloopService } from './../services/gameloop.service';
+import { GameloopService } from '../services/gameloop.service';
 import { Component, OnInit } from '@angular/core';
 import { MapService } from '../services/map.service';
 import { AssetService } from '../services/asset.service';
