@@ -4,5 +4,6 @@
     background: yellow;
     position: absolute;
     opacity: 0.5;
-    border: 0.1px solid black;  
+    border: 0.1px solid black; 
+    z-index: 100;
 }
