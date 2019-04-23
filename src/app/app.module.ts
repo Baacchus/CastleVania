@@ -4,19 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
-import {APP_BASE_HREF} from '@angular/common';
-
+import { AssetService } from './services/asset.service';
+import { MapService } from './services/map.service';
+import { CoordonneePipe } from './coordonnee.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    CoordonneePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+  providers: [
+    MapService,
+    AssetService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
