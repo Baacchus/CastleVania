@@ -1,9 +1,5 @@
-<div class="player" 
-    
-style="top: {{stateMachina.charY| coordinates}};
-    left: {{ stateMachina.charX | coordinates }};">
-     
+<div class="player" [ngStyle]="{
+    'top': '( stateMachina.charY | coordinates )', 'left': '( stateMachina.charX | coordinates )'
+}">
 
 </div>
-<p> {{stateMachina.charY | coordinates}} </p>
-<p> {{stateMachina.charX | coordinates}} </p>
