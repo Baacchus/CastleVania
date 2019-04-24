@@ -8,6 +8,7 @@ import { AssetService } from './services/asset.service';
 import { MapService } from './services/map.service';
 import { BackgroundComponent } from './background/background.component';
 import { InterfaceComponent } from './interface/interface.component';
+import { OptionsComponent } from './options/options.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { InterfaceComponent } from './interface/interface.component';
     MapComponent,
     InterfaceComponent,
     MenuComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule,
