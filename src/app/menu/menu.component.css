@@ -4,11 +4,10 @@
 }
 
 
-li{
+li {
     list-style-type:none;
     width: 370px;
     height: auto;
-     /* background-color: black; */
     vertical-align: middle;
     margin: 4px;
     color: #f6a148;
@@ -26,13 +25,15 @@ li:hover {
 
 }
 
-
  #menu{
     position: absolute;
     top: 80%;
     left: 35%;
-   
- 
+}
+a {
+ color: #f6a148;
+ text-decoration: none;
+    
+}
 
-} 
 
