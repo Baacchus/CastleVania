@@ -1,14 +1,4 @@
 <div [ngStyle]="{
-<<<<<<< HEAD
-    'top.px': (stateMachina.charY | coordinates),
-    'left.px': (stateMachina.charX | coordinates)
-}" [ngClass]="{
-        'playerstop' : stateMachina.moveState === 0,
-        'playermove' : stateMachina.moveState === 1 || stateMachina.moveState === 2 ,
-        'playerjump' : stateMachina.moveState === 3
-}">
-
-=======
                     'top.px': (stateMachina.charY | coordinates),
                     'left.px': (stateMachina.charX | coordinates)
 }"
@@ -17,7 +7,6 @@
                     'player-move-right' : stateMachina.moveState === 2,
                     'player-move-left' : stateMachina.moveState === 1,
                     'player-jump' : stateMachina.moveState === 3
-    }"    
+    }"
 >
->>>>>>> jerem
 </div>

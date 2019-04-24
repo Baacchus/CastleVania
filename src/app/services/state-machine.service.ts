@@ -11,7 +11,7 @@ export const MOVE_JUMP = 3;
 export class StateMachineService {
   
   moveState: number = 0;
-  lastState: number = 0;
+
   charX: number = 0;
   charY: number = 8.2;
 

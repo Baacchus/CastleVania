@@ -1,12 +1,12 @@
 .player-move-right {
-    position: absolute;
+    position: fixed;
     width: 66px;
     height: 48px;
     background: url(../../assets/gothic-hero-run.png);
     animation: sprite_run 1s steps(12) infinite;
 }
 
-.player-stop-right {
+.player-stop {
     position: absolute;
     width: 38px;
     height: 48px;
@@ -22,19 +22,14 @@
     transform: scaleX(-1)
 }
 
-.player-stop-left {
+/* .player-stop-left {
     position: absolute;
     width: 38px;
     height: 48px;
     background: url(../../assets/gothic-hero-idle.png);
-<<<<<<< HEAD
-    animation: sprite 1s steps(4) infinite;
-} 
-=======
     animation: sprite_stop 1s steps(4) infinite;
     transform: scaleX(-1)
-}
->>>>>>> jerem
+} */
 
 @keyframes sprite_run {
     from {
@@ -45,19 +40,11 @@
     }
 }
 
-<<<<<<< HEAD
-@keyframes spriteStop {
-=======
 @keyframes sprite_stop {
->>>>>>> jerem
     from {
         background-position: 0;
     }
     to {
-<<<<<<< HEAD
-        background-position: -792px;
-=======
         background-position: -152px;
->>>>>>> jerem
     }
 }

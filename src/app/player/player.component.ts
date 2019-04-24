@@ -8,40 +8,42 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor(public stateMachina : StateMachineService) { }
+  
 
-  ngOnInit() {
+constructor(public stateMachina : StateMachineService) { }
+
+ngOnInit() {
+}
+
+@HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
+  //event.preventDefault(); //bloque le scroll 
+
+  switch (event.keyCode) {
+    case 39:
+      console.log(" >>>  droite ");
+      console.log(event);
+      this.stateMachina.setMoveState(MOVE_RIGHT);
+      break;
+    case 37:
+      console.log(" <<<  gauche ");
+      console.log(event);
+      this.stateMachina.setMoveState(MOVE_LEFT);
+      break;
   }
+}
 
-  @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
-    event.preventDefault(); //bloque le scroll 
-
-    switch (event.keyCode) {
-      case 39:
-        console.log(" >>>  droite ");
-        console.log(event);
-        this.stateMachina.setMoveState(MOVE_RIGHT);
-        break;
-      case 37:
-        console.log(" <<<  gauche ");
-        console.log(event);
-        this.stateMachina.setMoveState(MOVE_LEFT);
-        break;
-    }
+@HostListener('document:keyup', ['$event']) onKeyup(event: KeyboardEvent) {
+  switch (event.keyCode) {
+    case 39:
+      console.log("STOP");
+      console.log(event);
+      this.stateMachina.setMoveState(MOVE_NULL);
+      break;
+    case 37:
+      console.log("STOP");
+      console.log(event);
+      this.stateMachina.setMoveState(MOVE_NULL);
+      break;
   }
-
-  @HostListener('document:keyup', ['$event']) onKeyup(event: KeyboardEvent) {
-    switch (event.keyCode) {
-      case 39:
-        console.log("STOP");
-        console.log(event);
-        this.stateMachina.setMoveState(MOVE_NULL);
-        break;
-      case 37:
-        console.log("STOP");
-        console.log(event);
-        this.stateMachina.setMoveState(MOVE_NULL);
-        break;
-    }
-  }
+}
 }
