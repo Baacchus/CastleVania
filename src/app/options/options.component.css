@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'bradley_gratis';
+  src: url(../../assets/bradleygratis/test.ttf);
+}
+
+
+
 .imageBack{
     background-image: url("../../assets/backgroundWebsite.jpg");
     width: 100%;
@@ -6,4 +13,30 @@
     background-size: cover;
   }
   
+
+  .fondNoir{
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    left:25%;
+    top:30%;
+    background-color: RGBa(0, 0, 0, 0.8);
+    border-radius: 15px;
+  }
+
+
+
+  .titre{
+    width: 30%;
+    position: absolute;
+    left: 35%;
+    background-color: RGBa(0, 0, 0, 0.8);
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-family: 'bradley_gratis', arial;
+    font-size: 5em;
+    vertical-align: middle;
+    top: 1%;
+  }
   
