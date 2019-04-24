@@ -1,19 +1,4 @@
-.player-move-right {
-    position: absolute;
-    width: 66px;
-    height: 48px;
-    background: url(../../assets/gothic-hero-run.png);
-    animation: sprite_run 1s steps(12) infinite;
-}
-
-.player-stop-right {
-    position: absolute;
-    width: 38px;
-    height: 48px;
-    background: url(../../assets/gothic-hero-idle.png);
-    animation: sprite_stop 1s steps(4) infinite;
-}
-.player-move-left {
+.player-move {
     position: absolute;
     width: 66px;
     height: 48px;
@@ -22,7 +7,7 @@
     transform: scaleX(-1)
 }
 
-.player-stop-left {
+.player-stop {
     position: absolute;
     width: 38px;
     height: 48px;
@@ -30,6 +15,7 @@
     animation: sprite_stop 1s steps(4) infinite;
     transform: scaleX(-1)
 }
+
 
 @keyframes sprite_run {
     from {
