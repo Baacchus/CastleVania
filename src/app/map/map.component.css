@@ -1,8 +1,7 @@
 #screen {
   width: 700px;
   height: 502px;
-  overflow: scroll;
-  border: 10px solid red;
+  overflow: hidden;
 }
 
 #map {
