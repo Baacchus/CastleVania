@@ -1,0 +1,36 @@
+.player-move {
+    position: absolute;
+    width: 66px;
+    height: 48px;
+    background: url(../../assets/gothic-hero-run.png);
+    animation: sprite_run 1s steps(12) infinite;
+    transform: scaleX(-1)
+}
+
+.player-stop {
+    position: absolute;
+    width: 38px;
+    height: 48px;
+    background: url(../../assets/gothic-hero-idle.png);
+    animation: sprite_stop 1s steps(4) infinite;
+    transform: scaleX(-1)
+}
+
+
+@keyframes sprite_run {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -792px;
+    }
+}
+
+@keyframes sprite_stop {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -152px;
+    }
+}
