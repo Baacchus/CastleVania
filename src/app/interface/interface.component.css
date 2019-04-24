@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+  margin: 5% 0;
+  padding: 0;
+}
+#background {
+  background-size:cover;
+  width: 700px;
+  height: 500px;
+  margin:auto;
+  border: 10px solid black;
+  position: absolute;
+  z-index: 3;
+  top: 25%;
+  left: 25%;
+
+}
+.scanlines {
+  background-image: url(https://i.imgur.com/3ZzMST5.png);
+  width: 700px;
+  height: 552px;
+}
+.banner {
+  margin: 5% 0;
+  background-color: black;
+  width: 700px;
+  height: 90px;
+  position: absolute;
+  top: -35px;
+  color: white;
+  font: normal 400 1.1em 'Press Start 2P', Monospace, Verdana, sans-serif;
+}
+.banner p {
+  line-height: 10px;
+}
+.player-life {
+  background: url("https://i.imgur.com/NBt32sN.png") repeat-x;
+  background-repeat: repeat-x;
+  position: absolute;
+  margin: -18px 0 0 125px;
+  float: left;
+  width: 30px;
+  height: 20px;
+}
+/*.enemy-life {  (QUESTION?)
+  background: url(https://i.imgur.com/c9jbXjQ.png) repeat-x;
+  background-repeat: repeat-x;
+  position: absolute;
+  margin: -30px 0 0 125px;
+  float: left;
+  width: 170px;
+  height: 16px;
+}
+  */
+.score {
+  word-spacing: -15px;
+}
+.time {
+  margin-left: 50px;
+  letter-spacing: 2px;
+}
+
+.stage {
+    margin-left: 90px;
+}
+
+
+body{
+  width: 100%
+}  
+
+.imageBack{
+  background-image: url("../../assets/backgroundWebsite.jpg");
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background-size: cover;
+}
+
+
+
+
+

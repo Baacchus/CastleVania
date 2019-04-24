@@ -1,4 +1,4 @@
-import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL } from '../services/state-machine.service';
+import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
@@ -8,42 +8,44 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  
 
-constructor(public stateMachina : StateMachineService) { }
 
-ngOnInit() {
-}
+  constructor(public stateMachina: StateMachineService) { }
 
-@HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
-  //event.preventDefault(); //bloque le scroll 
-
-  switch (event.keyCode) {
-    case 39:
-      console.log(" >>>  droite ");
-      console.log(event);
-      this.stateMachina.setMoveState(MOVE_RIGHT);
-      break;
-    case 37:
-      console.log(" <<<  gauche ");
-      console.log(event);
-      this.stateMachina.setMoveState(MOVE_LEFT);
-      break;
+  ngOnInit() {
   }
-}
 
-@HostListener('document:keyup', ['$event']) onKeyup(event: KeyboardEvent) {
-  switch (event.keyCode) {
-    case 39:
-      console.log("STOP");
-      console.log(event);
-      this.stateMachina.setMoveState(MOVE_NULL);
-      break;
-    case 37:
-      console.log("STOP");
-      console.log(event);
-      this.stateMachina.setMoveState(MOVE_NULL);
-      break;
+  @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
+    //event.preventDefault(); //bloque le scroll 
+
+    switch (event.keyCode) {
+      case 39:
+        console.log(" >>>  droite ");
+        this.stateMachina.setMoveState(MOVE_RIGHT);
+        break;
+      case 37:
+        console.log(" <<<  gauche ");
+        this.stateMachina.setMoveState(MOVE_LEFT);
+        break;
+      case 32:
+        console.log(" ^ jump ^ ");
+        this.stateMachina.setMoveState(MOVE_JUMP);
+
+        break;
+    }
   }
-}
+
+
+  @HostListener('document:keyup', ['$event']) onKeyup(event: KeyboardEvent) {
+    switch (event.keyCode) {
+      case 39:
+        console.log("STOP");
+        this.stateMachina.setMoveState(MOVE_NULL);
+        break;
+      case 37:
+        console.log("STOP");
+        this.stateMachina.setMoveState(MOVE_NULL);
+        break;
+    }
+  }
 }
