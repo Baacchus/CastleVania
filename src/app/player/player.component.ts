@@ -19,10 +19,12 @@ export class PlayerComponent implements OnInit {
     switch (event.keyCode) {
       case 39:
         console.log(" >>>  droite ");
+        console.log(event);
         this.stateMachina.setMoveState(MOVE_RIGHT);
         break;
       case 37:
         console.log(" <<<  gauche ");
+        console.log(event);
         this.stateMachina.setMoveState(MOVE_LEFT);
         break;
     }
@@ -32,10 +34,12 @@ export class PlayerComponent implements OnInit {
     switch (event.keyCode) {
       case 39:
         console.log("STOP");
+        console.log(event);
         this.stateMachina.setMoveState(MOVE_NULL);
         break;
       case 37:
         console.log("STOP");
+        console.log(event);
         this.stateMachina.setMoveState(MOVE_NULL);
         break;
     }

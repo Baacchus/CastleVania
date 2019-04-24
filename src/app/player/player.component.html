@@ -1,12 +1,12 @@
-<div class="playerstop" 
-    [ngStyle]="{
-    'top.px': (stateMachina.charY | coordinates),
-    'left.px': (stateMachina.charX | coordinates)
+<div [ngStyle]="{
+                    'top.px': (stateMachina.charY | coordinates),
+                    'left.px': (stateMachina.charX | coordinates)
 }"
     [ngClass]="{
-        'playerstop' : ,
-        'playermove' : ,
-        'playerjump' :
+                    'player-stop' : stateMachina.moveState === 0,
+                    'player-move-right' : stateMachina.moveState === 2,
+                    'player-move-left' : stateMachina.moveState === 1,
+                    'player-jump' : stateMachina.moveState === 3
     }"    
 >
 </div>
