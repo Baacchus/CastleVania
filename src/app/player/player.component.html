@@ -1,7 +1,53 @@
-<div class="player" 
+<div
+*ngIf="stateMachina.moveState === 1"
+
+    [ngStyle]="{
+    'top.px': (stateMachina.charY | coordinates),
+    'left.px': (stateMachina.charX | coordinates)
+}"
+    [ngClass]="{
+        'playerstop': stateMachina.moveState === 0,
+        'playermove': stateMachina.moveState === 1 || stateMachina.moveState === 2,
+        'playerjump': stateMachina.moveState === 3
+
+    }"
     
-    [ngStyle]="{    
-        'top': 'charY',
-        'left': 'charX'}"
-        >
+>
 </div>
+
+<div
+*ngIf="stateMachina.moveState === 2"
+
+    [ngStyle]="{
+    
+    'top.px': (stateMachina.charY | coordinates),
+    'left.px': (stateMachina.charX | coordinates)
+}"
+    [ngClass]="{
+        'playerstop': stateMachina.moveState === 0,
+        'playermove': stateMachina.moveState === 1 || stateMachina.moveState === 2,
+        'playerjump': stateMachina.moveState === 3
+
+    }"
+    
+>
+</div>
+
+<div
+*ngIf="stateMachina.moveState === 0"
+
+    [ngStyle]="{
+    'top.px': (stateMachina.charY | coordinates),
+    'left.px': (stateMachina.charX | coordinates)
+}"
+    [ngClass]="{
+        'playerstop': stateMachina.moveState === 0,
+        'playermove': stateMachina.moveState === 1 || stateMachina.moveState === 2,
+        'playerjump': stateMachina.moveState === 3
+
+    }"
+    
+>
+</div>
+
+

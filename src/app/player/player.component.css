@@ -1,6 +1,25 @@
-.player {
-    width: 16px;
-    height: 30px;
-    background: yellow;
+.playermove {
     position: absolute;
+    width: 66px;
+    height: 48px;
+    background: url(../../assets/gothic-hero-run.png);
+    animation: sprite 1s steps(12) infinite;
+}
+
+.playerstop {
+    position: absolute;
+    width: 66px;
+    height: 48px;
+    background: url(../../assets/gothic-hero-idle.png);
+    animation: sprite 1s steps(4) infinite;
+}
+
+
+@keyframes sprite {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -792px;
+    }
 }
