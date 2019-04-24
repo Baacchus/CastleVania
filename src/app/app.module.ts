@@ -7,13 +7,15 @@ import { MapComponent } from './map/map.component';
 import { AssetService } from './services/asset.service';
 import { MapService } from './services/map.service';
 import { BackgroundComponent } from './background/background.component';
+import { OptionsComponent } from './options/options.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     MenuComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule,
