@@ -9,7 +9,7 @@ export const MOVE_JUMP = 3;
   providedIn: 'root'
 })
 export class StateMachineService {
-  
+
   moveState: number = 0;
 
   charX: number = 0;
@@ -18,7 +18,7 @@ export class StateMachineService {
 
   constructor() { }
 
-  setMoveState(state: number){
+  setMoveState(state: number) {
     this.moveState = state;
   }
 }
