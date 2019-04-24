@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT } from './state-machine.service';
 
-const  LOOP_INTERVAL = 50;
+// const  LOOP_INTERVAL = 50;
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,12 @@ export class GameloopService {
       this._stateMachina.charX += 0.1;
     }
     
-    setInterval( () => this.logic(), LOOP_INTERVAL);
+    requestAnimationFrame( () => this.logic());
   }
 
   play(){
     this.logic();
   }
+
+
 }

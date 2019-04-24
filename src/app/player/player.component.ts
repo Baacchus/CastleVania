@@ -9,6 +9,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
+
+
   constructor(public stateMachina : StateMachineService) { }
 
   ngOnInit() {
@@ -42,4 +44,5 @@ export class PlayerComponent implements OnInit {
         break;
     }
   }
+
 }
