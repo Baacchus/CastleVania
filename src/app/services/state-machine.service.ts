@@ -13,7 +13,7 @@ export class StateMachineService {
   moveState: number = 0;
   lastState: number = 0;
   charX: number = 0;
-  charY: number = 8.2;
+  charY: number = 8;
 
 
   constructor() { }

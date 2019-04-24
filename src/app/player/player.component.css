@@ -4,7 +4,6 @@
     height: 48px;
     background: url(../../assets/gothic-hero-run.png);
     animation: sprite_run 1s steps(12) infinite;
-    transform: scaleX(-1)
 }
 
 .player-stop {
@@ -13,7 +12,10 @@
     height: 48px;
     background: url(../../assets/gothic-hero-idle.png);
     animation: sprite_stop 1s steps(4) infinite;
-    transform: scaleX(-1)
+}
+
+.transform{
+    transform: scaleX(-1);
 }
 
 

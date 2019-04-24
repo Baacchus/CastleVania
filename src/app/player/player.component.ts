@@ -25,11 +25,6 @@ export class PlayerComponent implements OnInit {
         console.log(" <<<  gauche ");
         this.stateMachina.setMoveState(MOVE_LEFT);
         break;
-      case 32: 
-        console.log(" ^ jump ^ ");
-        this.stateMachina.setMoveState(MOVE_JUMP);
-        
-        break;
     }
   }
 
@@ -38,12 +33,12 @@ export class PlayerComponent implements OnInit {
       case 39:
         console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
-        this.stateMachina.lastState = MOVE_RIGHT;
+        this.stateMachina.lastState = 2;
         break;
       case 37:
         console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
-        this.stateMachina.lastState = MOVE_LEFT;
+        this.stateMachina.lastState = 1;
         break;
     }
   }
