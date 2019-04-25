@@ -22,22 +22,43 @@
     top:30%;
     background-color: RGBa(0, 0, 0, 0.8);
     border-radius: 15px;
+    display: flex;
   }
 
+  .commande{
+    width: 80%;
+    position: absolute;
+    height: auto;
+   /*  background-color: green; */
+    flex-direction: column;
+    display: flex;
+/*     vertical-align: middle;
+ */    
+    margin: auto;
+    text-align: center;
+  }
 
+  .arrow{
+    width: 15%;
+  }
+
+  .space{
+    width: 17%;
+  }
 
   .titre{
     width: 30%;
     position: absolute;
     left: 35%;
-    background-color: RGBa(0, 0, 0, 0.8);
+    background-color: black;
     border-radius: 15px;
     color: white;
     text-align: center;
     font-family: 'bradley_gratis', arial;
     font-size: 5em;
     vertical-align: middle;
-    top: 1%;
+    top: 25%;
+    margin: 0px;
   }
   
   .boutonHome{
@@ -46,3 +67,6 @@
     top: 6%;
     left: 3%;
   }
+
+
+ 
