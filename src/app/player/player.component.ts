@@ -25,6 +25,7 @@ export class PlayerComponent implements OnInit {
         console.log(" <<<  gauche ");
         this.stateMachina.setMoveState(MOVE_LEFT);
         break;
+      
     }
   }
 
