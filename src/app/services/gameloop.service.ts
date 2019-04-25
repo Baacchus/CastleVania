@@ -27,16 +27,14 @@ export class GameloopService {
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
-      
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5; i++) {
         this.canJump = false;
-        this._stateMachina.charY -= 0.8;
+        this._stateMachina.charY -= 0.5;
       }
     }
 
     if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.trunc(this._stateMachina.charX)] === 0)) {
-      this._stateMachina.charY += 0.4;
-      console.log(this.canJump)
+      this._stateMachina.charY += 0.2;
     }
 
     if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.trunc(this._stateMachina.charX)] != 0)) {
