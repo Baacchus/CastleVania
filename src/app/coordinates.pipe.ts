@@ -7,6 +7,6 @@ export class CoordinatesPipe implements PipeTransform {
 
 
   transform(value: any): any {
-    return `${value * 50}`;
+    return `${value * 0.96 * 50}`;
   }
 }

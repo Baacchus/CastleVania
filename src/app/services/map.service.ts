@@ -9,7 +9,6 @@ const WALL = 3;
   providedIn: 'root'
 })
 
-
 export class MapService {
   
 
@@ -31,5 +30,4 @@ export class MapService {
   getMap() {
     return this.map;
   }
-
 }

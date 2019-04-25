@@ -15,7 +15,6 @@ export class StateMachineService {
   charX: number = 0;
   charY: number = 8;
 
-
   constructor() { }
 
   setMoveState(state: number){

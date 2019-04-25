@@ -9,37 +9,44 @@ import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP } from './state-m
 })
 export class GameloopService {
 
-  constructor(private _stateMachina: StateMachineService, private _mapService: MapService) {  }
+  public canJump: Boolean = true;
 
-  logic(){
-    // if(this._stateMachina.moveState === MOVE_LEFT && (this._mapService.map[this._stateMachina.charY][this._stateMachina.charX -1]) === VOID){
-    //     this._stateMachina.charX -= 0.05;
+  constructor(private _stateMachina: StateMachineService, private _mapService: MapService) { }
 
-    // }
-    // else if(this._stateMachina.moveState === MOVE_RIGHT){
-    //     this._stateMachina.charX += 0.05;
-    //     console.log(Math.round(this._stateMachina.charX))
-    // }
+  logic() {
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
-      if (this._mapService.map[this._stateMachina.charY][Math.trunc(this._stateMachina.charX -1)] === 0) {
+      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.trunc(this._stateMachina.charX - 1)] === 0) {
         this._stateMachina.charX -= 0.1;
-      } 
-    }
-    else if (this._stateMachina.moveState === MOVE_RIGHT) {
-      if (this._mapService.map[this._stateMachina.charY][Math.trunc(this._stateMachina.charX +1)] === 0) {
-        this._stateMachina.charX += 0.1;
-
       }
     }
-    else if (this._stateMachina.moveState === MOVE_JUMP){
-      this._stateMachina.charY -= 0.1;
+    else if (this._stateMachina.moveState === MOVE_RIGHT) {
+      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.trunc(this._stateMachina.charX + 1)] === 0) {
+        this._stateMachina.charX += 0.1;
+        console.log(this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.trunc(this._stateMachina.charX)])
+      }
     }
-    
-    requestAnimationFrame( () => this.logic()); //setinterval => request...
+    else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
+      
+      for (let i = 0; i < 4; i++) {
+        this.canJump = false;
+        this._stateMachina.charY -= 0.8;
+      }
+    }
+
+    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.trunc(this._stateMachina.charX)] === 0)) {
+      this._stateMachina.charY += 0.4;
+      console.log(this.canJump)
+    }
+
+    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.trunc(this._stateMachina.charX)] != 0)) {
+      this.canJump = true;
+    }
+
+    requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
-  play(){
+  play() {
     this.logic();
   }
 }
