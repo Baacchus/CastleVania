@@ -40,3 +40,9 @@
     top: 1%;
   }
   
+  .boutonHome{
+    position: absolute;
+    width: 6%;
+    top: 6%;
+    left: 3%;
+  }
