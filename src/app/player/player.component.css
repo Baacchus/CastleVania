@@ -1,5 +1,5 @@
 .player-move {
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background-position: bottom center;
     position: absolute;
     width: 66px;
@@ -9,7 +9,7 @@
 }
 
 .player-stop {
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background-position: bottom center;
     position: absolute;
     width: 38px;
@@ -23,7 +23,7 @@
     transform: scaleX(-1);}
     
 .player-jump {
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background-position: bottom center;
     position: absolute;
     width: 61px;

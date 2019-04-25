@@ -29,7 +29,7 @@ export class GameloopService {
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
       for (let i = 0; i < 5; i++) {
         this.canJump = false;
-        this._stateMachina.charY -= 0.5;
+        this._stateMachina.charY -= 1;
       }
     }
 
