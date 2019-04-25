@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { StateMachineService, MOVE_LEFT, MOVE_RIGHT } from './state-machine.service';
 import { MapService } from './map.service';
+import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP } from './state-machine.service';
 
 //const  LOOP_INTERVAL = 50;
 
@@ -32,7 +32,10 @@ export class GameloopService {
 
       }
     }
-
+    else if (this._stateMachina.moveState === MOVE_JUMP){
+      this._stateMachina.charY -= 0.1;
+    }
+    
     requestAnimationFrame( () => this.logic()); //setinterval => request...
   }
 

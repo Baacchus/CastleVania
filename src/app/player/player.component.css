@@ -16,9 +16,19 @@
 
 
 .transform{
-    transform: scaleX(-1);
+    transform: scaleX(-1);}
+    
+.player-jump {
+    position: absolute;
+    width: 61px;
+    height: 48px;
+    background: url(../../assets/gothic-hero-jump.png);
+    animation: sprite_jump 1s steps(5) infinite;
 }
 
+.transform {
+    transform: scaleX(-1);
+}
 
 @keyframes sprite_run {
     from {
@@ -36,4 +46,13 @@
     to {
         background-position: -152px;
     }
-}  
+}
+
+@keyframes sprite_jump {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -305px;
+    }
+}
