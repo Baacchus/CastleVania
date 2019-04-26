@@ -42,13 +42,13 @@ export class GameloopService {
       if (monster.direction == MOVE_RIGHT) {
         monster.charX += 0.1;
         if (monster.charX + monster.amplitude < monster.charX) {
-          monster.direction = MOVE_RIGHT
+          monster.direction = MOVE_RIGHT;
         }
       }
       else if (monster.direction == MOVE_LEFT) {
         monster.charX -= 0.1;
         if (monster.charX - monster.amplitude > monster.charX) {
-          monster.direction = MOVE_RIGHT
+          monster.direction = MOVE_RIGHT;
         }
       }
     }
