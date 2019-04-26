@@ -23,27 +23,46 @@
     background-color: RGBa(0, 0, 0, 0.8);
     border-radius: 15px;
     display: flex;
+   border:2px outset #dd2502;
+ 
   }
 
   .commande{
-    width: 80%;
+    width: 100%;
     position: absolute;
     height: auto;
-   /*  background-color: green; */
+    /*  background-color: green; */
     flex-direction: column;
     display: flex;
-/*     vertical-align: middle;
- */    
-    margin: auto;
-    text-align: center;
+    top: 20%; 
+    left:30%;   
+  }
+
+  .direction{
+    color: white;
+    margin-top: 4%;
+    margin-left:25%;
+    font-family: "bradley_gratis", arial;
+    font-size: 40px;
+  }
+
+  .jump{
+    color: white;
+    margin-top: 7%;
+    margin-left: 25%;
+    font-family: "bradley_gratis", arial;
+    font-size: 40px;
+
   }
 
   .arrow{
     width: 15%;
+    float: left;
   }
 
   .space{
     width: 17%;
+    float:left;
   }
 
   .titre{
@@ -52,13 +71,15 @@
     left: 35%;
     background-color: black;
     border-radius: 15px;
-    color: white;
+    color: black;
     text-align: center;
     font-family: 'bradley_gratis', arial;
     font-size: 5em;
     vertical-align: middle;
     top: 25%;
     margin: 0px;
+     background-image: url(../../assets/flammes.jpeg);
+    background-size: cover;
   }
   
   .boutonHome{
