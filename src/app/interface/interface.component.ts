@@ -7,17 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterfaceComponent implements OnInit {
 
-  time: number = 1;
-
   constructor() { }
 
   ngOnInit() {
-
-    setInterval(() => { if (this.time > 0) this.time++; }, 1000);
   }
-
-
-
 }
-
-
