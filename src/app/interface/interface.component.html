@@ -3,19 +3,24 @@
     <app-map></app-map>
   </div>
   <div class="banner">
-    <h5><span class="score">SCORE : 00000</span> <span class="time">TIME:0:00</span> <span class="stage">STAGE 01</span>
-    </h5>
-    <h5>PLAYER : <div class="player-life"></div>
-    </h5>
+
+    
+  
+      <h5><span class="score">SCORE : 00000</span> <span class="time">TIME: {{(time>0) ? time : "Go !"}}</span> <span class="stage">STAGE 01</span></h5>
+      <h5>PLAYER : <div class="player-life"></div></h5>       
+     
 
     <div id="item-box">
       <div id="item"></div>
     </div>
   </div>
-</div>
-<div id="player"></div>
-<div class="imageBack">
-</div>
+
+    <div id="player"></div>
+
+    <div class="imageBack">
+      
+    </div>
+ 
 
 <audio id="song" autoplay>
   <source src="musique du jeux">
