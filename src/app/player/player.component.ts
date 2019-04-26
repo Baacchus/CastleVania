@@ -8,27 +8,25 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor(public stateMachina : StateMachineService) { }
+  constructor(public stateMachina: StateMachineService) { }
 
   ngOnInit() {
   }
 
   @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
-    event.preventDefault(); //bloque le scroll 
-
+    event.preventDefault(); //bloque le scroll
     switch (event.keyCode) {
       case 39:
-        console.log(" >>>  droite ");
+        console.log(" >>>  DROITE ");
         this.stateMachina.setMoveState(MOVE_RIGHT);
         break;
       case 37:
-        console.log(" <<<  gauche ");
+        console.log(" <<<  GAUCHE ");
         this.stateMachina.setMoveState(MOVE_LEFT);
         break;
-      case 32: 
-        console.log(" ^ jump ^ ");
+      case 32:
+        console.log(" ^ JUMP ^ ");
         this.stateMachina.setMoveState(MOVE_JUMP);
-        
         break;
     }
   }
@@ -38,12 +36,17 @@ export class PlayerComponent implements OnInit {
       case 39:
         console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
-        this.stateMachina.lastState = MOVE_RIGHT;
+        this.stateMachina.lastState = 2;
         break;
       case 37:
         console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
-        this.stateMachina.lastState = MOVE_LEFT;
+        this.stateMachina.lastState = 1;
+        break;
+      case 32:
+        console.log("STOP");
+        this.stateMachina.setMoveState(MOVE_NULL);
+        this.stateMachina.lastState = 3;
         break;
     }
   }
