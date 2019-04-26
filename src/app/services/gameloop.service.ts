@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { StateMachineService, MOVE_LEFT, MOVE_RIGHT } from './state-machine.service';
+import { MapService } from './map.service';
+import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP } from './state-machine.service';
 
 //const  LOOP_INTERVAL = 50;
 
@@ -8,20 +9,42 @@ import { StateMachineService, MOVE_LEFT, MOVE_RIGHT } from './state-machine.serv
 })
 export class GameloopService {
 
-  constructor(private _stateMachina: StateMachineService) {  }
+  public canJump: Boolean = true;
 
-  logic(){
-    if(this._stateMachina.moveState === MOVE_LEFT){
-      this._stateMachina.charX -= 0.05;
+  constructor(private _stateMachina: StateMachineService, private _mapService: MapService) { }
+
+  logic() {
+
+    if (this._stateMachina.moveState === MOVE_LEFT) {
+      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX - 1)] === 0) {
+        this._stateMachina.charX -= 0.1;
+      }
     }
-    else if(this._stateMachina.moveState === MOVE_RIGHT){
-      this._stateMachina.charX += 0.05;
+    else if (this._stateMachina.moveState === MOVE_RIGHT) {
+      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
+        this._stateMachina.charX += 0.1;
+        console.log(this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX)])
+      }
     }
-    
-    requestAnimationFrame( () => this.logic()); //setinterval => request...
+    else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
+      for (let i = 0; i < 5; i++) {
+        this.canJump = false;
+        this._stateMachina.charY -= 1;
+      }
+    }
+
+    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
+      this._stateMachina.charY += 0.2;
+    }
+
+    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
+      this.canJump = true;
+    }
+
+    requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
-  play(){
+  play() {
     this.logic();
   }
 }

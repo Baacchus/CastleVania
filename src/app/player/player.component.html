@@ -3,9 +3,9 @@
                     'left.px': (stateMachina.charX | coordinates)
 }"
     [ngClass]="{
-                    'player-stop' : stateMachina.moveState === 0 ,
+                    'player-stop' : stateMachina.moveState === 0,
                     'player-move' : stateMachina.moveState === 2 || stateMachina.moveState === 1,
-                    'player-jump' : stateMachina.moveState === 3
-    }"    
->
+                    'player-jump' : stateMachina.moveState === 3,
+                    'transform' : stateMachina.moveState === 1 || (stateMachina.lastState === 1 && stateMachina.moveState === 0) || (stateMachina.lastState === 1 && stateMachina.moveState === 0)        
+    }">
 </div>
