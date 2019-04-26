@@ -16,14 +16,14 @@ export class GameloopService {
   logic() {
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
-      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.trunc(this._stateMachina.charX - 1)] === 0) {
+      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX - 1)] === 0) {
         this._stateMachina.charX -= 0.1;
       }
     }
     else if (this._stateMachina.moveState === MOVE_RIGHT) {
-      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.trunc(this._stateMachina.charX + 1)] === 0) {
+      if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
         this._stateMachina.charX += 0.1;
-        console.log(this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.trunc(this._stateMachina.charX)])
+        console.log(this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX)])
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
@@ -33,11 +33,11 @@ export class GameloopService {
       }
     }
 
-    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.trunc(this._stateMachina.charX)] === 0)) {
+    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
       this._stateMachina.charY += 0.2;
     }
 
-    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.trunc(this._stateMachina.charX)] != 0)) {
+    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
       this.canJump = true;
     }
 
