@@ -1,4 +1,5 @@
-import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP, Attack } from '../services/state-machine.service';
+import { GameloopService } from './../services/gameloop.service';
+import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP, ATTACK } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor(public stateMachina: StateMachineService) { }
+  constructor(public stateMachina: StateMachineService, public gameloop: GameloopService) { }
 
   ngOnInit() {
   }
@@ -29,8 +30,8 @@ export class PlayerComponent implements OnInit {
         this.stateMachina.setMoveState(MOVE_JUMP);
         break;
       case 13:
-        console.log(" -> Attack <- ");
-        this.stateMachina.setMoveState(Attack);
+        console.log(" -> ATTACK <- ");
+        this.stateMachina.setMoveState(ATTACK);
         break;
     }
   }
@@ -39,15 +40,14 @@ export class PlayerComponent implements OnInit {
     switch (event.keyCode) {
       case 39:
         console.log("STOP");
-        this.stateMachina.beforeLasteState = this.stateMachina.lastState
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 2;
         break;
       case 37:
         console.log("STOP");
-        this.stateMachina.beforeLasteState = this.stateMachina.lastState
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 1;
+        this.stateMachina.beforeLasteState = this.stateMachina.lastState;
         break;
       case 32:
         console.log("STOP");

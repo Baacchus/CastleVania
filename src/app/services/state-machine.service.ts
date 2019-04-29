@@ -6,7 +6,7 @@ export const MOVE_LEFT = 1;
 export const MOVE_RIGHT = 2;
 export const MOVE_NULL = 0;
 export const MOVE_JUMP = 3;
-export const Attack = 4;
+export const ATTACK = 4;
 
 
 
