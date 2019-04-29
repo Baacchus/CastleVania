@@ -35,16 +35,19 @@ export class PlayerComponent implements OnInit {
     switch (event.keyCode) {
       case 39:
         console.log("STOP");
+        this.stateMachina.beforeLasteState = this.stateMachina.lastState
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 2;
         break;
       case 37:
         console.log("STOP");
+        this.stateMachina.beforeLasteState = this.stateMachina.lastState
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 1;
         break;
       case 32:
         console.log("STOP");
+        this.stateMachina.beforeLasteState = this.stateMachina.lastState
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 3;
         break;

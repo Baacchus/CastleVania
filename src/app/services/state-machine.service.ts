@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { MapService } from './map.service';
 import { Wolf } from '../monster/monster';
 
 
@@ -15,7 +14,8 @@ export const MOVE_JUMP = 3;
 export class StateMachineService {
 
   moveState: number = 0;
-  lastState: number = 0;
+  lastState: number = 2;
+  beforeLasteState: number = 2; 
   charX: number = 0;
   charY: number = 8;
   lifePlayer: number = 4;
@@ -23,7 +23,7 @@ export class StateMachineService {
   public monsters: Wolf[] = [new Wolf(4, 8)]
 
 
-  constructor(mapService: MapService) {  }
+  constructor() {  }
 
   setMoveState(state: number) {
     this.moveState = state;
