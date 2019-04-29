@@ -11,12 +11,12 @@ import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP } from './state-m
   providedIn: 'root'
 })
 export class GameloopService {
- 
+
   public move: number;
   public canJump: Boolean = true;
 
-  constructor(private _stateMachina: StateMachineService, private _mapService: MapService) {  }
-  
+  constructor(private _stateMachina: StateMachineService, private _mapService: MapService) { }
+
   logic() {
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
@@ -36,19 +36,19 @@ export class GameloopService {
         this._stateMachina.charY -= 1;
       }
     }
- 
+
     if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
       this._stateMachina.charY += 0.2;
     }
- 
+
     if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
       this.canJump = true;
     }
 
-    
+
     this.moveMonster();
 
-    requestAnimationFrame( () => this.logic()); //setinterval => request...
+    requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
   play() {
@@ -58,23 +58,19 @@ export class GameloopService {
   moveMonster() {
     for (let index in this._mapService.monsters) {
       const monster = this._mapService.monsters[index]
- 
-      if (monster.direction == MOVE_RIGHT) {
-        monster.charX += 0.1;
-        if (monster.charX + monster.amplitude < monster.charX) {
-          monster.direction = MOVE_RIGHT;
+
+      if (monster.direction === MOVE_RIGHT) {
+        monster.monsterX += 0.1;
+        if (monster.initialX + monster.amplitude < monster.monsterX) {
+          monster.direction = MOVE_LEFT;
         }
       }
       else if (monster.direction == MOVE_LEFT) {
-        monster.charX -= 0.1;
-        if (monster.charX - monster.amplitude > monster.charX) {
-          monster.direction = MOVE_RIGHT;
+        monster.monsterX -= 0.1;
+        if (monster.initialX - monster.amplitude > monster.monsterX) {
+          monster.direction = MOVE_LEFT;
         }
       }
     }
-
   }
-
-
-
 }
