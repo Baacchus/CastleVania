@@ -27,18 +27,25 @@ export class GameloopService {
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
-      for (let i = 0; i < 5; i++) {
+        this._stateMachina.powerJump= 30;
         this.canJump = false;
-        this._stateMachina.charY -= 1;
-      }
+       
     }
 
-    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
-      this._stateMachina.charY += 0.2;
+    
+    if (this._stateMachina.powerJump  <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0) ) {
+      this._stateMachina.charY += 0.09;
     }
 
-    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
+    if (this._stateMachina.powerJump  <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
       this.canJump = true;
+      this._stateMachina.powerJump= 0;
+
+    }
+
+    if(this._stateMachina.powerJump > 0){
+      this._stateMachina.charY -= 0.1;
+      this._stateMachina.powerJump -= 1;
     }
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
