@@ -1,4 +1,4 @@
-import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP } from '../services/state-machine.service';
+import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP, Attack } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
@@ -28,6 +28,10 @@ export class PlayerComponent implements OnInit {
         console.log(" ^ JUMP ^ ");
         this.stateMachina.setMoveState(MOVE_JUMP);
         break;
+      case 13:
+        console.log(" -> Attack <- ");
+        this.stateMachina.setMoveState(Attack);
+        break;
     }
   }
 
@@ -50,6 +54,12 @@ export class PlayerComponent implements OnInit {
         this.stateMachina.beforeLasteState = this.stateMachina.lastState
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 3;
+        break;
+      case 13:
+        console.log("STOP");
+        this.stateMachina.setMoveState(MOVE_NULL);
+        this.stateMachina.lastState = 5;
+
         break;
     }
   }

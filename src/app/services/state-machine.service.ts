@@ -6,6 +6,8 @@ export const MOVE_LEFT = 1;
 export const MOVE_RIGHT = 2;
 export const MOVE_NULL = 0;
 export const MOVE_JUMP = 3;
+export const Attack = 4;
+
 
 
 @Injectable({
@@ -21,7 +23,7 @@ export class StateMachineService {
   lifePlayer: number = 4;
   public move: any = 0;
   public monsters: Wolf[] = [new Wolf(4, 8)]
-
+  powerJump: number= 0;
 
   constructor() {  }
 
