@@ -4,6 +4,7 @@ export const MOVE_LEFT = 1;
 export const MOVE_RIGHT = 2;
 export const MOVE_NULL = 0;
 export const MOVE_JUMP = 3;
+export const Attack = 4;
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class StateMachineService {
   lastState: number = 0;
   charX: number = 0;
   charY: number = 8;
-  powerJump: number= 0;  
+  powerJump: number= 0;
 
   constructor() { }
 

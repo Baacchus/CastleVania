@@ -6,6 +6,9 @@
                     'player-stop' : stateMachina.moveState === 0,
                     'player-move' : stateMachina.moveState === 2 || stateMachina.moveState === 1,
                     'player-jump' : stateMachina.moveState === 3,
-                    'transform' : stateMachina.moveState === 1 || (stateMachina.lastState === 1 && stateMachina.moveState === 0) || (stateMachina.lastState === 1 && stateMachina.moveState === 0)        
+                    'player-attack' : stateMachina.moveState === 4,
+                    'transform' : stateMachina.moveState === 1 || (stateMachina.lastState === 1 && stateMachina.moveState === 0) 
+                    || (stateMachina.lastState === 1 && stateMachina.moveState === 3)
+                    || (stateMachina.lastState === 1 && stateMachina.moveState === 4 )
     }">
 </div>

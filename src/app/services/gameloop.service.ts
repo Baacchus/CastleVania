@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
-import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP } from './state-machine.service';
+import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, Attack } from './state-machine.service';
 
 //const  LOOP_INTERVAL = 50;
 
@@ -48,6 +48,7 @@ export class GameloopService {
       this._stateMachina.powerJump -= 1;
     }
 
+    
     requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
