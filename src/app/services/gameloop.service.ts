@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
-import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, Attack } from './state-machine.service';
+import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
 import { Monster, Wolf } from '../monster/monster';
 
 
@@ -38,27 +38,27 @@ export class GameloopService {
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
-        this._stateMachina.powerJump= 30;
-        this.canJump = false;
-       
+      this._stateMachina.powerJump = 30;
+      this.canJump = false;
+
     }
 
-    if (this._stateMachina.powerJump  <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0) ) {
+    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
       this._stateMachina.charY += 0.09;
     }
 
-    if (this._stateMachina.powerJump  <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
+    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
       this.canJump = true;
-      this._stateMachina.powerJump= 0;
+      this._stateMachina.powerJump = 0;
 
     }
 
-    if(this._stateMachina.powerJump > 0){
+    if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.1;
       this._stateMachina.powerJump -= 1;
     }
 
-    
+
 
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
@@ -84,12 +84,12 @@ export class GameloopService {
           monster.direction = MOVE_RIGHT;
         }
       }
-    if( Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2 ) {
-      console.log(this._stateMachina.lifePlayer)
-    }
-    if((this._stateMachina.moveState === Attack) && Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) {
-      this._mapService.monsters.splice([0][0])
-    }
+      if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
+        console.log(this._stateMachina.lifePlayer)
+      }
+      if ((this._stateMachina.moveState === ATTACK) && Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) {
+        this._mapService.monsters.splice(parseInt(index), 1)
+      }
     }
   }
 }

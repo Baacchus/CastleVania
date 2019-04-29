@@ -1,4 +1,4 @@
-import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP, Attack } from '../services/state-machine.service';
+import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP, ATTACK } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
@@ -30,7 +30,7 @@ export class PlayerComponent implements OnInit {
         break;
       case 13:
         console.log(" -> Attack <- ");
-        this.stateMachina.setMoveState(Attack);
+        this.stateMachina.setMoveState(ATTACK);
         break;
     }
   }
