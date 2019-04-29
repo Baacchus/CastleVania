@@ -13,6 +13,7 @@ import { GameloopService } from './services/gameloop.service';
 import { CoordinatesPipe } from './coordinates.pipe';
 import { BackgroundComponent } from './background/background.component';
 import { InterfaceComponent } from './interface/interface.component';
+import { OptionsComponent } from './options/options.component';
 
 
 @NgModule({
@@ -23,6 +24,8 @@ import { InterfaceComponent } from './interface/interface.component';
     CoordinatesPipe,
     InterfaceComponent,
     MenuComponent,
+    BackgroundComponent,
+    OptionsComponent,
     BackgroundComponent
 
   ],
