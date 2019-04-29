@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'bradley_gratis';
+  src: url(../../assets/bradleygratis/test.ttf);
+}
+
+
+
 .imageBack{
     background-image: url("../../assets/backgroundWebsite.jpg");
     width: 100%;
@@ -6,4 +13,81 @@
     background-size: cover;
   }
   
+
+  .fondNoir{
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    left:25%;
+    top:30%;
+    background-color: RGBa(0, 0, 0, 0.8);
+    border-radius: 15px;
+    display: flex;
+    border:2px outset #dd2502;
+ 
+  }
+
+  .commande{
+    width: 100%;
+    position: absolute;
+    height: auto;
+    /*  background-color: green; */
+    flex-direction: column;
+    display: flex;
+    top: 20%; 
+    left:30%;   
+  }
+
+  .direction{
+    color: white;
+    margin-top: 4%;
+    margin-left:25%;
+    font-family: "bradley_gratis", arial;
+    font-size: 40px;
+  }
+
+  .jump{
+    color: white;
+    margin-top: 7%;
+    margin-left: 25%;
+    font-family: "bradley_gratis", arial;
+    font-size: 40px;
+
+  }
+
+  .arrow{
+    width: 15%;
+    float: left;
+  }
+
+  .space{
+    width: 17%;
+    float:left;
+  }
+
+  .titre{
+    width: 30%;
+    position: absolute;
+    left: 35%;
+    background-color: black;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    font-family: 'bradley_gratis', arial;
+    font-size: 5em;
+    vertical-align: middle;
+    top: 25%;
+    margin: 0px;
+     background-image: url(../../assets/flammes.jpeg);
+    background-size: cover;
+  }
   
+  .boutonHome{
+    position: absolute;
+    width: 6%;
+    top: 6%;
+    left: 3%;
+  }
+
+
+ 
