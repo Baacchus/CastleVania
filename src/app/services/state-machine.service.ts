@@ -21,7 +21,7 @@ export class StateMachineService {
   public monsters: Wolf[] = [new Wolf(4, 8)]
 
 
-  constructor() { mapService: MapService }
+  constructor(mapService: MapService) {  }
 
   setMoveState(state: number) {
     this.moveState = state;
