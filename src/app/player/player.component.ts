@@ -58,7 +58,7 @@ export class PlayerComponent implements OnInit {
       case 13:
         console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
-        this.stateMachina.lastState = 5;
+        this.stateMachina.lastState = 4;
 
         break;
     }

@@ -10,7 +10,7 @@ export class Monster {
 }
 export class Wolf extends Monster {
 
-    constructor(public monsterX: number, monsterY: number, public amplitude: number = 2, public direction = 1 /* MOVE_RIGHT */) {
+    constructor(public monsterX: number, monsterY: number, public amplitude: number = 2, public direction = 1) {
 
         super('assets/wolf.png', monsterX, monsterY)
     }
