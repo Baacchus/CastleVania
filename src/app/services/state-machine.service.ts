@@ -8,6 +8,7 @@ export const MOVE_RIGHT = 2;
 export const MOVE_NULL = 0;
 export const MOVE_JUMP = 3;
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,7 @@ export class StateMachineService {
   lastState: number = 0;
   charX: number = 0;
   charY: number = 8;
+  lifePlayer: number = 4;
   public move: any = 0;
   public monsters: Wolf[] = [new Wolf(4, 8)]
 

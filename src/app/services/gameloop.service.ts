@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
-import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP } from './state-machine.service';
+import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP} from './state-machine.service';
+import { Monster } from '../monster/monster';
 
 
 
 
-//const  LOOP_INTERVAL = 50;
+// const  LOOP_INTERVAL = 50;
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class GameloopService {
 
   public move: number;
@@ -17,7 +20,10 @@ export class GameloopService {
 
   constructor(private _stateMachina: StateMachineService, private _mapService: MapService) { }
 
+  
   logic() {
+    this.moveMonster();
+
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX - 1)] === 0) {
@@ -27,7 +33,6 @@ export class GameloopService {
     else if (this._stateMachina.moveState === MOVE_RIGHT) {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
         this._stateMachina.charX += 0.1;
-        console.log(this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX)])
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
@@ -44,9 +49,8 @@ export class GameloopService {
     if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
       this.canJump = true;
     }
+    
 
-
-    this.moveMonster();
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
@@ -71,6 +75,11 @@ export class GameloopService {
           monster.direction = MOVE_RIGHT;
         }
       }
+      if((this._stateMachina.charX - monster.monsterX   ) && (this._stateMachina.charY === )){
+      this._stateMachina.lifePlayer -= 1;
+      console.log(this._stateMachina.lifePlayer)
+    }
     }
   }
+
 }
