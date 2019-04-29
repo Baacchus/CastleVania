@@ -7,6 +7,7 @@ export const MOVE_RIGHT = 2;
 export const MOVE_NULL = 0;
 export const MOVE_JUMP = 3;
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,11 @@ export class StateMachineService {
   charX: number = 0;
   charY: number = 8;
   public move: any = 0;
-
+  initX: number = 0;
+  initY: number = 8;
+  public startTime: Date;
+  public gameDuration: number = 0;
+  public endTime: Date;
 
   constructor() {mapService: MapService}
 
@@ -25,3 +30,5 @@ export class StateMachineService {
     this.moveState = state;
   }
 }
+
+

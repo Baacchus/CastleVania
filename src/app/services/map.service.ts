@@ -14,7 +14,7 @@ const WALL = 3;
 
 export class MapService {
  
-    public monsters: Wolf[] = [new Wolf(6, 8),]
+    public monsters: Wolf[] = [new Wolf(6, 8)]
 /*     public ogrs: OgrMonster[] =  [new OgrMonster(40, 18),]
  */
   constructor() { }
