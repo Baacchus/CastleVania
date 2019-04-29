@@ -12,7 +12,7 @@ const WALL = 3;
 
 export class MapService {
 
-  public monsters: Wolf[] = [new Wolf(6, 8), new Wolf(8,6)]; 
+  public monsters: Wolf[] = [new Wolf(6, 8), new Wolf(8,5)]; 
                             
   /*     public ogrs: OgrMonster[] =  [new OgrMonster(40, 18),]
    */
