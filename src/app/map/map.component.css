@@ -25,9 +25,7 @@
   height: 32px;
   background: url(../../assets/wolf.png);
   position:absolute;
-  top:0;
-  left:0;
-  animation: moveX 5s steps(12) infinite;
+  animation: moveX 300ms steps(12) infinite;
   transform : scaleX(1)
 
   }

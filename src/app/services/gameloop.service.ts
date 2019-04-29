@@ -60,15 +60,15 @@ export class GameloopService {
       const monster = this._mapService.monsters[index]
 
       if (monster.direction === MOVE_RIGHT) {
-        monster.monsterX += 0.1;
+        monster.monsterX += 0.05;
         if (monster.initialX + monster.amplitude < monster.monsterX) {
           monster.direction = MOVE_LEFT;
         }
       }
       else if (monster.direction == MOVE_LEFT) {
-        monster.monsterX -= 0.1;
+        monster.monsterX -= 0.05;
         if (monster.initialX - monster.amplitude > monster.monsterX) {
-          monster.direction = MOVE_LEFT;
+          monster.direction = MOVE_RIGHT;
         }
       }
     }
