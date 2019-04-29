@@ -33,8 +33,8 @@ export class GameloopService {
     }
 
     
-    if ((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0) &&  this._stateMachina.powerJump  <= 0) {
-      this._stateMachina.charY += 0.2;
+    if (this._stateMachina.powerJump  <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0) ) {
+      this._stateMachina.charY += 0.09;
     }
 
     if (this._stateMachina.powerJump  <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
