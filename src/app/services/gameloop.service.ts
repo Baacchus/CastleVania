@@ -63,7 +63,7 @@ export class GameloopService {
 
   moveMonster() {
     for (let index in this._mapService.monsters) {
-      const monster = this._mapService.monsters[index]
+      const monster = this._mapService.monsters[index];
 
       if (monster.direction === MOVE_RIGHT) {
         monster.monsterX += 0.05;
@@ -77,10 +77,9 @@ export class GameloopService {
           monster.direction = MOVE_RIGHT;
         }
       }
-      if (this._stateMachina.charX - monster.monsterX < 0.5) {
-        this._stateMachina.lifePlayer -= 1;
-        console.log(this._stateMachina.lifePlayer)
-      }
+    if( Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2 ) {
+      console.log(this._stateMachina.lifePlayer)
+    }
     }
   }
 }
