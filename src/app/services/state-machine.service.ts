@@ -23,7 +23,7 @@ export class StateMachineService {
   powerJump: number= 0;
   lifePlayer: number = 4;
   public move: any = 0;
-  public monsters: Wolf[] = [new Wolf(4, 8)]
+  public monsters: Wolf[] = [new Wolf(4, 8), new Wolf(8,6)]
 
 
   constructor(mapService: MapService) {  }
