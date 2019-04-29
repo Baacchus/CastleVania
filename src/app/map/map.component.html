@@ -1,10 +1,10 @@
-<div id="screen">
+<div id="screen" #screen>
 
-    <app-player></app-player>
+  <app-player></app-player>
   <div id="map">
     <div class="row" *ngFor="let row of map">
-      <div class="col" *ngFor="let col of row" [ngStyle]="{'background-image': assets[col].url}"> 
-        
+      <div class="col" *ngFor="let col of row" [ngStyle]="{'background-image': assets[col].url}">
+
       </div>
     </div>
   </div>

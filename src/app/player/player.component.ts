@@ -1,5 +1,6 @@
 import { StateMachineService, MOVE_RIGHT, MOVE_LEFT, MOVE_NULL, MOVE_JUMP } from '../services/state-machine.service';
 import { Component, OnInit, HostListener } from '@angular/core';
+import { GameloopService } from '../services/gameloop.service';
 
 @Component({
   selector: 'app-player',
@@ -8,7 +9,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor(public stateMachina: StateMachineService) { }
+  constructor(public stateMachina: StateMachineService, public gameLoop: GameloopService) { }
 
   ngOnInit() {
   }
@@ -17,15 +18,15 @@ export class PlayerComponent implements OnInit {
     event.preventDefault(); //bloque le scroll
     switch (event.keyCode) {
       case 39:
-        console.log(" >>>  DROITE ");
+        //console.log(" >>>  DROITE ");
         this.stateMachina.setMoveState(MOVE_RIGHT);
         break;
       case 37:
-        console.log(" <<<  GAUCHE ");
+        //console.log(" <<<  GAUCHE ");
         this.stateMachina.setMoveState(MOVE_LEFT);
         break;
       case 32:
-        console.log(" ^ JUMP ^ ");
+        //console.log(" ^ JUMP ^ ");
         this.stateMachina.setMoveState(MOVE_JUMP);
         break;
     }
@@ -34,17 +35,17 @@ export class PlayerComponent implements OnInit {
   @HostListener('document:keyup', ['$event']) onKeyup(event: KeyboardEvent) {
     switch (event.keyCode) {
       case 39:
-        console.log("STOP");
+        //console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 2;
         break;
       case 37:
-        console.log("STOP");
+        //console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 1;
         break;
       case 32:
-        console.log("STOP");
+        //console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 3;
         break;
