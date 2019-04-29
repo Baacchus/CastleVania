@@ -9,8 +9,7 @@
     </div>
 
     <div *ngFor="let monster of mapService.monsters" class="wolf" 
-    [ngStyle]="{top: '' + monster.charY* 52 + 'px', left: '' + monster.charX * 52 + 'px'}"></div>
+    [ngStyle]="{top: '' + monster.monsterY* 52 + 'px', left: '' + monster.monsterX * 52 + 'px'}"></div>
   </div>
-
 
 </div>

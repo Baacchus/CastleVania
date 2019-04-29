@@ -1,6 +1,10 @@
 export class Monster {
-    constructor(public assetUrl: string, public charX: number, public charY: number) {
- 
+
+    initialX: number;
+    initialY: number;
+    constructor(public assetUrl: string, public monsterX: number, public monsterY: number) {
+        this.initialX = monsterX;
+        this.initialY = monsterY;
     }
  
  }
@@ -17,4 +21,4 @@ export class Monster {
 
     
     }
- }
+}

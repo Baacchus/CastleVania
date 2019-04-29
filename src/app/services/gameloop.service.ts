@@ -15,8 +15,6 @@ export class GameloopService {
   public move: number;
   public canJump: Boolean = true;
 
-  
- 
   constructor(private _stateMachina: StateMachineService, private _mapService: MapService) { }
 
   logic() {
@@ -82,7 +80,6 @@ export class GameloopService {
 
 
     }
-
   }
 
 

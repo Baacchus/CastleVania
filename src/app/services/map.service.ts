@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Wolf } from '../monster/monster';
 
-
-
 const VOID = 0;
 const FLOOR = 1;
 const CEIL = 2;
