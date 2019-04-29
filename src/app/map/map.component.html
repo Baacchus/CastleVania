@@ -1,6 +1,6 @@
 <div id="screen">
   <div id="map">
-    <app-player></app-player>
+    <app-player id="player"></app-player>
 
     <div class="row" *ngFor="let row of map">
       <div class="col" *ngFor="let col of row" [ngStyle]="{'background-image': assets[col].url}">

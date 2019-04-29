@@ -24,6 +24,7 @@ export class GameloopService {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
         this._stateMachina.charX += 0.1;
         console.log(this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX)])
+        this.scrollLock();
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
@@ -47,4 +48,14 @@ export class GameloopService {
   play() {
     this.logic();
   }
+
+  /* Scroll Lock */
+  public screenWidth: number;
+
+  scrollLock() {
+    console.log(this._stateMachina.charX * 50);
+    this.screenWidth = window.innerWidth;
+    window.scroll((this._stateMachina.charX) * 50 - ((window.innerWidth / 2) - 500), this._stateMachina.charY * 50);
+  }
+
 }

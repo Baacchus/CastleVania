@@ -20,4 +20,5 @@ export class StateMachineService {
   setMoveState(state: number) {
     this.moveState = state;
   }
+
 }

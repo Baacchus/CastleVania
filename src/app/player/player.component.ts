@@ -14,7 +14,7 @@ export class PlayerComponent implements OnInit {
   }
 
   @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
-    event.preventDefault(); //bloque le scroll
+    //event.preventDefault(); //bloque le scroll
     switch (event.keyCode) {
       case 39:
         console.log(" >>>  DROITE ");
@@ -48,4 +48,5 @@ export class PlayerComponent implements OnInit {
         break;
     }
   }
+
 }
