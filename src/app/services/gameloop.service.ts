@@ -47,7 +47,7 @@ export class GameloopService {
 
 
     if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
-      this._stateMachina.charY += 0.09;
+      this._stateMachina.charY += 0.1;
       this.scrollBlock();
     }
 
@@ -57,10 +57,9 @@ export class GameloopService {
     }
 
     if (this._stateMachina.powerJump > 0) {
-      this._stateMachina.charY -= 0.12;
-      this._stateMachina.powerJump -= 1.2;
+      this._stateMachina.charY -= 0.1;
+      this._stateMachina.powerJump -= 1;
       this.scrollBlock();
-
     }
 
 
@@ -97,7 +96,7 @@ export class GameloopService {
   }
 
   scrollBlock() {
-    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) -50, this._stateMachina.charY * 50)
+    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 50, this._stateMachina.charY * 50)
   }
 
 }
