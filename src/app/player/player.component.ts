@@ -9,6 +9,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
+  public soundLand: any;
+
   constructor(public stateMachina: StateMachineService, public gameloop: GameloopService) { }
 
   ngOnInit() {
@@ -58,8 +60,11 @@ export class PlayerComponent implements OnInit {
       case 13:
         console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
+        this.soundLand = new Audio()
+        this.soundLand.src = "assets/sound/sword-void.mp3"
+        this.soundLand.load()
+        this.soundLand.play()
         this.stateMachina.lastState = 4;
-
         break;
     }
   }
