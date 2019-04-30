@@ -5,7 +5,14 @@
     [ngClass]="{
                     'player-stop' : stateMachina.moveState === 0,
                     'player-move' : stateMachina.moveState === 2 || stateMachina.moveState === 1,
-                    'player-jump' : stateMachina.moveState === 3,
-                    'transform' : stateMachina.moveState === 1 || (stateMachina.lastState === 1 && stateMachina.moveState === 0) || (stateMachina.lastState === 1 && stateMachina.moveState === 0)        
+                    'player-jump' : gameloop.canJump === false,
+                    'player-attack' : stateMachina.moveState === 4,
+                    'transform' : stateMachina.moveState === 1 ||
+                     (stateMachina.lastState === 1 && stateMachina.moveState === 0) || 
+                     (stateMachina.lastState === 1 && stateMachina.moveState === 3) ||
+                     (gameloop.canJump === false && stateMachina.beforeLastState === 1 ) ||
+                     (stateMachina.moveState === 4 && stateMachina.lastState === 1) ||
+                     (gameloop.canJump === false && stateMachina.beforeLastState === 1 )
     }">
+
 </div>

@@ -88,5 +88,23 @@ body{
   left: 3%;
 }
 
+/* A suprimmer */
 
+.gameOver{
+  width: 20%;
+  height: auto;
+  color: white;
+  background-color: black;
+  position: absolute;
+}
+ 
 
+/* A suprimmer */
+.Win{
+  width: 40%;
+  height: auto;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: 80px;
+}

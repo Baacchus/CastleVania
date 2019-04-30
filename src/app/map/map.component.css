@@ -1,13 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
 #screen {
   width: 700px;
   height: 502px;
-  overflow: hidden;
 }
 
 #map {
   width: 7000px;
   height: 500px;
   background-image: url(../../assets/background.jpg);
+  z-index: 1;
 }
 
 .row {
@@ -21,17 +23,80 @@
 }
 
 .wolf {
+  background-repeat: no-repeat !important;
+  background-position: bottom center !important;
   width: 64px;
   height: 32px;
   background: url(../../assets/wolf.png);
-  position:absolute;
-  top:0;
-  left:0;
-  animation: moveX 5s steps(12) infinite;
-  transform : scaleX(1)
+  position: absolute;
+  animation: moveX 300ms steps(12) infinite;
+}
+.scale{
+  transform: scaleX(-1)
+}
 
+@keyframes moveX {
+  from {
+    background-position-x: 0px;
   }
-  @keyframes moveX {
-  from {background-position-x: 0px;}
-  to {background-position-x: -768px;}
-                      }
+  to {
+    background-position-x: -768px;
+  }
+}
+
+
+.backPicture {
+  background-size:cover;
+  width: 100%;
+  height: 50%;
+  margin:auto;
+  background-color: black;
+  position: fixed;
+  z-index: 3;
+  font: normal 0.8em 'Press Start 2P', Monospace, Verdana, sans-serif;
+}
+
+.backHome {
+  letter-spacing: 2px;
+  color: white;
+  position: relative;
+  right: 50%;
+  bottom: 8%;
+
+}
+
+.time {
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+}
+
+.stage {
+  letter-spacing: 2px;
+  color: white;
+  position: relative;
+  left: 85%;
+  bottom: 8%;
+}
+
+.logo img {
+  position: absolute;
+  width: 10%;
+  right: 5%;
+  bottom: 45%;
+}
+
+.textplay {
+  letter-spacing: 2px;
+  color: white;
+  position: relative;
+  text-align: center;
+  top: 10%;
+}
+
+/* .home img {
+  position: absolute;
+  width: 10%;
+  bottom: 35%;
+  left: 5%;
+} */
