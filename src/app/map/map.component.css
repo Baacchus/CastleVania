@@ -67,9 +67,12 @@
   letter-spacing: 2px;
   color: white;
   position: relative;
-  left: 5%;
+  left: 85%;
   bottom: 8%;
+}
 
-  
+.logo {
+
+  background-image: url("/assets/.logo.jpg");
 }
 
