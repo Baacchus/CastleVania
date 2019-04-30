@@ -1,0 +1,9 @@
+.imageBack{
+    background-image: url("../../assets/backgroundWebsite.jpg");
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-size: cover;
+  }
+  
+  

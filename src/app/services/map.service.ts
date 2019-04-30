@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Wolf } from '../monster/monster';
 
 const VOID = 0;
 const FLOOR = 1;
@@ -10,8 +11,11 @@ const WALL = 3;
 })
 
 export class MapService {
-  
 
+  public monsters: Wolf[] = [new Wolf(6, 8), new Wolf(8,5)]; 
+                            
+  /*     public ogrs: OgrMonster[] =  [new OgrMonster(40, 18),]
+   */
   constructor() { }
 
   public map = [
