@@ -16,12 +16,14 @@ export const ATTACK = 4;
 export class StateMachineService {
 
   moveState: number = 0;
-  lastState: number = 2;
+
   beforeLasteState: number = 2;
   charX: number = 1;
   charY: number = 8.15;
   powerJump: number = 0;
   lifePlayer: number = 4;
+
+
   public move: any = 0;
   public monsters: Wolf[] = [new Wolf(4, 8), new Wolf(8, 5), new Wolf(15, 8)];
 
@@ -30,4 +32,5 @@ export class StateMachineService {
   setMoveState(state: number) {
     this.moveState = state;
   }
+
 }
