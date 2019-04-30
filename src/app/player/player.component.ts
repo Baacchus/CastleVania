@@ -58,6 +58,11 @@ export class PlayerComponent implements OnInit {
       case 13:
         console.log("STOP");
         this.stateMachina.setMoveState(MOVE_NULL);
+        this.soundLand = new Audio();
+        this.soundLand.src = 'assets/sound/sword-void.mp3';
+        this.soundLand.load();
+        this.soundLand.play();
+
         this.stateMachina.lastState = 4;
 
         break;
