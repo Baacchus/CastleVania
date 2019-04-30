@@ -20,19 +20,15 @@ export class PlayerComponent implements OnInit {
     event.preventDefault(); //bloque le scroll
     switch (event.keyCode) {
       case 39:
-        console.log(" >>>  DROITE ");
         this.stateMachina.setMoveState(MOVE_RIGHT);
         break;
       case 37:
-        console.log(" <<<  GAUCHE ");
         this.stateMachina.setMoveState(MOVE_LEFT);
         break;
       case 32:
-        console.log(" ^ JUMP ^ ");
         this.stateMachina.setMoveState(MOVE_JUMP);
         break;
       case 13:
-        console.log(" -> ATTACK <- ");
         this.stateMachina.setMoveState(ATTACK);
         break;
     }
@@ -41,31 +37,26 @@ export class PlayerComponent implements OnInit {
   @HostListener('document:keyup', ['$event']) onKeyup(event: KeyboardEvent) {
     switch (event.keyCode) {
       case 39:
-        console.log('STOP');
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 2;
         break;
       case 37:
-        console.log('STOP');
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 1;
         this.stateMachina.beforeLasteState = this.stateMachina.lastState;
         break;
       case 32:
-        console.log('STOP');
         this.stateMachina.beforeLasteState = this.stateMachina.lastState;
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 3;
         break;
       case 13:
-        console.log('STOP');
         this.stateMachina.setMoveState(MOVE_NULL);
         this.soundSwordVoid = new Audio();
         this.soundSwordVoid.src = 'assets/sound/sword-void.mp3';
         this.soundSwordVoid.load();
         this.soundSwordVoid.play();
         this.stateMachina.lastState = 4;
-
         break;
     }
   }

@@ -21,7 +21,7 @@ export class GameloopService {
     this.mainTheme.src = '/assets/sound/uefa-champions-league.mp3';
     this.mainTheme.load();
     this.mainTheme.volume = 0.7;
-    this.mainTheme.play()
+    this.mainTheme.play();
   }
 
   logic() {
