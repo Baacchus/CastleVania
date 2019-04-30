@@ -11,11 +11,23 @@ export class GameloopService {
   public move: number;
   public canJump: Boolean = true;
   public distChara: number = 0;
+  public musicTheme: any;
+  public soundJump: any;
+  public soundLand: any;
+  public soundSwordVoid: any;
 
   constructor(private _stateMachina: StateMachineService, private _mapService: MapService, ) { }
 
+/*   playSoundGame() {
+    this.musicTheme = new Audio();
+    this.musicTheme.src = "/assets/sound/uefa-champions-league.mp3";
+    this.musicTheme.load();
+    this.musicTheme.play();
+  } */
 
   logic() {
+
+    //this.playSoundGame();
     this.moveMonster();
 
     // this.distChara = Math.abs(this._stateMachina.charX - this._mapService.)
@@ -33,8 +45,12 @@ export class GameloopService {
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
       this._stateMachina.powerJump = 30;
       this.canJump = false;
-    }
 
+      this.soundJump = new Audio()
+      this.soundJump.src = "assets/sound/hero-jump.mp3"
+      this.soundJump.load()
+      this.soundJump.play()
+    }
 
     if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
       this._stateMachina.charY += 0.09;
@@ -48,10 +64,16 @@ export class GameloopService {
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
-    }
-  
+      if (this._stateMachina.powerJump === 1) {
 
-    requestAnimationFrame(() => this.logic()); //setinterval => request...
+        this.soundLand = new Audio()
+        this.soundLand.src = "assets/sound/hero-land.mp3"
+        this.soundLand.load()
+        this.soundLand.play()
+      }
+    }
+
+  requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
   play() {
@@ -79,8 +101,12 @@ export class GameloopService {
         Math.round(this._stateMachina.lifePlayer -= 0.0625);
         console.log("Ma vie :" + this._stateMachina.lifePlayer )
       }
-      if ((this._stateMachina.moveState === ATTACK) && Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) {
+      if (((this._stateMachina.moveState === ATTACK) && Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) && Math.abs(this._stateMachina.charY - monster.monsterY) < 0.6) {
         this._mapService.monsters.splice(parseInt(index), 1)
+        this.soundLand = new Audio()
+        this.soundLand.src = "assets/sound/sword-monster.mp3"
+        this.soundLand.load()
+        this.soundLand.play()
       }
     }
   }
