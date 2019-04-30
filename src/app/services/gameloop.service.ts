@@ -55,7 +55,7 @@ export class GameloopService {
       this.soundJump.src = "assets/sound/hero-jump.mp3"
       this.soundJump.load()
       this.soundJump.play()
-    }
+    
 
     if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
       this._stateMachina.charY += 0.1;
@@ -76,12 +76,14 @@ export class GameloopService {
       this.scrollBlock();
     }
 
-        this.soundLand = new Audio()
+        /* this.soundLand = new Audio()
         this.soundLand.src = "assets/sound/hero-land.mp3"
         this.soundLand.load()
         this.soundLand.play()
-      }
+      } */
+    
     }
+  
 
   requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
@@ -124,5 +126,4 @@ export class GameloopService {
   scrollBlock() {
     window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 50, this._stateMachina.charY * 50)
   }
-
 }
