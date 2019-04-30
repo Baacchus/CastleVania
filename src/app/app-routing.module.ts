@@ -5,6 +5,8 @@ import { InterfaceComponent } from './interface/interface.component';
 import { OptionsComponent } from './options/options.component';
 import { MapComponent } from './map/map.component';
 import { MenuComponent } from './menu/menu.component';
+import { GameOverComponent } from './game-over/game-over.component';
+import { WinComponent } from './win/win.component';
 
 const routes: Routes = [
   
@@ -14,6 +16,13 @@ const routes: Routes = [
   { path: "options", component: OptionsComponent},
   { path: "map", component: MapComponent},
   { path: "menu", component: MenuComponent},
+  { path: "options", component: OptionsComponent},
+  /* A suprimmer */
+  { path: "gameOver", component: GameOverComponent},
+  /* A suprimmer */
+  { path: "youWin", component: WinComponent}
+
+
 
 ];
 

@@ -76,6 +76,7 @@ export class GameloopService {
     this._stateMachina.startTime = new Date()
     this.playGameMainTheme()
     this.logic();
+   
   }
 
   moveMonster() {
