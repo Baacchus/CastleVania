@@ -66,11 +66,14 @@ export class GameloopService {
       this.scrollBlock();
     }
 
+    this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime() 
+
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
   play() {
+    this._stateMachina.startTime = new Date()
     this.logic();
   }
 
