@@ -30,26 +30,20 @@ export class GameloopService {
     //this.playSoundGame();
     this.moveMonster();
 
-    // this.distChara = Math.abs(this._stateMachina.charX - this._mapService.)
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX - 1)] === 0) {
         this._stateMachina.charX -= 0.1;
-        this.scrollBlock();
       }
     }
     else if (this._stateMachina.moveState === MOVE_RIGHT) {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
         this._stateMachina.charX += 0.1;
-        this.scrollBlock();
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
       this._stateMachina.powerJump = 30;
       this.canJump = false;
-      this.scrollBlock();
-    }
-
 
       this.soundJump = new Audio()
       this.soundJump.src = "assets/sound/hero-jump.mp3"
@@ -59,7 +53,6 @@ export class GameloopService {
 
     if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
       this._stateMachina.charY += 0.09;
-      this.scrollBlock();
     }
 
     if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
@@ -70,18 +63,16 @@ export class GameloopService {
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
-      if (this._stateMachina.powerJump === 1) {
-      this.scrollBlock();
     }
 
-        this.soundLand = new Audio()
-        this.soundLand.src = "assets/sound/hero-land.mp3"
-        this.soundLand.load()
-        this.soundLand.play()
-      }
+    if (this._stateMachina.powerJump < 2 && this._stateMachina.powerJump > 0.5) {
+      this.soundLand = new Audio()
+      this.soundLand.src = "assets/sound/hero-land.mp3"
+      this.soundLand.load()
+      this.soundLand.play()
     }
 
-  requestAnimationFrame(() => this.logic()); //setinterval => request...
+    requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
   play() {
@@ -118,9 +109,4 @@ export class GameloopService {
       }
     }
   }
-
-  scrollBlock() {
-    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) -50, this._stateMachina.charY * 50)
-  }
-
 }
