@@ -1,9 +1,6 @@
-
-
 #screen {
   width: 700px;
-  height: 502px;
-  /* overflow: hidden; */
+  height: 500px;
 }
 
 #map {
@@ -32,7 +29,7 @@
   animation: moveX 300ms steps(12) infinite;
 }
 .scale{
-  transform: scaleX(-1)
+  transform: scaleX(-1);
 }
 
 @keyframes moveX {
