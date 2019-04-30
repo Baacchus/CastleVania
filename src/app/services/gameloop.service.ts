@@ -60,15 +60,10 @@ export class GameloopService {
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
-
       if (this._stateMachina.powerJump === 1) {
         this.scrollBlock();
       }
-
-      
       this.scrollBlock();
-
-
     }
 
 
@@ -98,7 +93,7 @@ export class GameloopService {
       if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
 
         Math.round(this._stateMachina.lifePlayer -= 0.0625);
-        console.log("Ma vie :" + this._stateMachina.lifePlayer)
+        console.log('Ma vie :' + this._stateMachina.lifePlayer)
         console.log(this._stateMachina.lifePlayer)
 
       }
@@ -113,6 +108,6 @@ export class GameloopService {
   }
 
   scrollBlock() {
-    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) -50, this._stateMachina.charY * 50)
+    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 50, this._stateMachina.charY * 50)
   }
 }
