@@ -3,7 +3,6 @@
 #screen {
   width: 700px;
   height: 502px;
-  /* overflow: hidden; */
 }
 
 #map {
@@ -100,13 +99,9 @@
   top: 10%;
 }
 
-
-
-
 /* .home img {
   position: absolute;
   width: 10%;
   bottom: 35%;
   left: 5%;
 } */
-
