@@ -10,7 +10,6 @@ const WALL = 3;
 })
 
 export class MapService {
-  
 
   constructor() { }
 

@@ -1,13 +1,15 @@
 #screen {
   width: 700px;
   height: 502px;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll; 
 }
 
 #map {
   width: 7000px;
   height: 500px;
   background-image: url(../../assets/background.jpg);
+  background-position-x: 100%;
 }
 
 .row {
