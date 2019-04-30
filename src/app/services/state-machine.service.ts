@@ -10,6 +10,7 @@ export const ATTACK = 4;
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,3 +36,5 @@ export class StateMachineService {
     this.moveState = state;
   }
 }
+
+

@@ -6,12 +6,17 @@ export class Monster {
         this.initialX = monsterX;
         this.initialY = monsterY;
     }
+ 
+ }
+ export class Wolf extends Monster {
+     
+    initY: number = 0;
+    initX: number = 0;
+ 
+    constructor(public charX: number, charY: number, public amplitude: number = 2, public direction = 1 /* MOVE_RIGHT */) {
+      
+        
+        super('assets/wolf.png' , charX, charY)
 
-}
-export class Wolf extends Monster {
-
-    constructor(public monsterX: number, monsterY: number, public amplitude: number = 2, public direction = 1) {
-
-        super('assets/wolf.png', monsterX, monsterY);
     }
 }
