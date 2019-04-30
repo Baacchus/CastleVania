@@ -39,7 +39,7 @@
     width: 96px;
     height: 50px;
     background: url(/assets/gothic-hero-attack.png);
-    animation: sprite_attack 350ms steps(6) infinite;
+    animation: sprite_attack 250ms steps(6) infinite;
 }
 
 
