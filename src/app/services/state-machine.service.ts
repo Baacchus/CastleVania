@@ -21,7 +21,7 @@ export class StateMachineService {
   charX: number = 0;
   charY: number = 8;
   powerJump: number= 0;
-  lifePlayer: number = 4;
+  lifePlayer: number = 3;
   public move: any = 0;
   public monsters: Wolf[] = [new Wolf(4, 8), new Wolf(8,5)]
 
@@ -30,4 +30,5 @@ export class StateMachineService {
   setMoveState(state: number) {
     this.moveState = state;
   }
+
 }
