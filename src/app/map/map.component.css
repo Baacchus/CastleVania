@@ -57,6 +57,20 @@
   font: normal 0.8em 'Press Start 2P', Monospace, Verdana, sans-serif;
 }  
 
+.player-life {
+ /*  background: url("https://i.imgur.com/NBt32sN.png") repeat-x; */
+ /*  background-repeat: repeat-x; */
+  position: relative;
+  height: 20px;
+  width: 10px;
+  background-color: red;
+  display: inline-block;
+  margin: 0.1%;
+  top: 30%
+  
+
+}
+
 .time {
   letter-spacing: 2px;
   color: white;
@@ -71,8 +85,28 @@
   bottom: 8%;
 }
 
-.logo {
-
-  background-image: url("/assets/.logo.jpg");
+.logo img {
+  position: absolute;
+  width: 10%;
+  right: 5%;
+  bottom: 35%;
 }
+
+.textplay {
+  letter-spacing: 2px;
+  color: white;
+  position: relative;
+  text-align: center;
+  top: 10%;
+}
+
+
+
+
+/* .home img {
+  position: absolute;
+  width: 10%;
+  bottom: 35%;
+  left: 5%;
+} */
 
