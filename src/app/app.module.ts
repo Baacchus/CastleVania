@@ -14,7 +14,6 @@ import { CoordinatesPipe } from './coordinates.pipe';
 import { BackgroundComponent } from './background/background.component';
 import { InterfaceComponent } from './interface/interface.component';
 import { OptionsComponent } from './options/options.component';
-import { LifePlayerPipe } from './life-player.pipe';
 
 
 @NgModule({
@@ -27,8 +26,7 @@ import { LifePlayerPipe } from './life-player.pipe';
     MenuComponent,
     BackgroundComponent,
     OptionsComponent,
-    BackgroundComponent,
-    LifePlayerPipe
+    BackgroundComponent
 
   ],
   imports: [

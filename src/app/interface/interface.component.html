@@ -8,12 +8,7 @@
 
     <h5><span class="score">SCORE : 00000</span> <span class="time">TIME: {{(time>0) ? time : "Go !"}}</span> <span
         class="stage">STAGE 01</span></h5>
-    <h5>PLAYER : <div [ngClass]="{
-      'player-life' : stateMachina.lifePlayer === 3,
-      'transform-life' : stateMachina.lifePlayer === 2,
-      'transform-life1' : stateMachina.lifePlayer === 1
-       
-  }"></div>
+    <h5>PLAYER : <div class="player-life"></div>
     </h5>
 
 
@@ -28,6 +23,6 @@
 <div class="imageBack">
 </div>
 
-<!-- <audio id="song" autoplay>
+  <!-- <audio id="song" autoplay>
     <source src="musique du jeux">
   </audio> -->
