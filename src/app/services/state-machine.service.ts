@@ -10,6 +10,7 @@ export const ATTACK = 4;
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +26,9 @@ export class StateMachineService {
   lifePlayer: number = 4;
   public move: any = 0;
   public monsters: Wolf[] = [new Wolf(4, 8), new Wolf(8,5)]
+  public startTime: Date;
+  public gameDuration: number = 0;
+  public endTime: Date;
 
   constructor() {  }
 
@@ -32,3 +36,5 @@ export class StateMachineService {
     this.moveState = state;
   }
 }
+
+

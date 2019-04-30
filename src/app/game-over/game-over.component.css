@@ -3,7 +3,42 @@
     src: url(../../assets/bradleygratis/test.ttf);
 }
 
+.imageGameOver{
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top:10%;
+    left:8%;
+}
 
+
+.container{
+
+    height: 100%;
+    width: 100%;
+    background-image:url(/assets/backgroundWebsite.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+ }
+
+ .boutonHome{
+    position: absolute;
+    width: 6%;
+    top: 6%;
+    left: 3%;
+  }
+
+
+  .logo{
+      position: absolute;
+      top: 8%;
+      width: 10%;
+      left: 85%;
+  }
+
+
+
+  
 li {
     list-style-type:none;
     width: 370px;
@@ -27,8 +62,8 @@ li:hover {
 
  #menu{
     position: absolute;
-    top: 65%;
-    left: 35%;
+    top: 85%;
+    left: 33%;
 }
 a {
  color: #f6a148;

@@ -14,6 +14,8 @@ import { CoordinatesPipe } from './coordinates.pipe';
 import { BackgroundComponent } from './background/background.component';
 import { InterfaceComponent } from './interface/interface.component';
 import { OptionsComponent } from './options/options.component';
+import { GameOverComponent } from './game-over/game-over.component';
+import { WinComponent } from './win/win.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { OptionsComponent } from './options/options.component';
     MenuComponent,
     BackgroundComponent,
     OptionsComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    GameOverComponent,
+    WinComponent
 
   ],
   imports: [

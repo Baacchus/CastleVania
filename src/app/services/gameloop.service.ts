@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
-import { Monster, Wolf } from '../monster/monster';
-
-
-
-
-// const  LOOP_INTERVAL = 50;
-
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +10,22 @@ export class GameloopService {
 
   public move: number;
   public canJump: Boolean = true;
+  public mainTheme: any;
   public soundSwordMonster: any;
   public soundJump: any;
 
   constructor(private _stateMachina: StateMachineService, private _mapService: MapService, ) { }
 
+  playGameMainTheme(){
+    this.mainTheme = new Audio();
+    this.mainTheme.src = '/assets/sound/uefa-champions-league.mp3';
+    this.mainTheme.load();
+    this.mainTheme.volume = 0.7;
+    this.mainTheme.play()
+  }
+
   logic() {
+    
     this.moveMonster();
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
@@ -60,18 +63,20 @@ export class GameloopService {
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
-      if (this._stateMachina.powerJump === 1) {
-        this.scrollBlock();
-      }
       this.scrollBlock();
     }
+
+    this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime() 
 
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
   play() {
+    this._stateMachina.startTime = new Date()
+    this.playGameMainTheme()
     this.logic();
+   
   }
 
   moveMonster() {
@@ -97,7 +102,7 @@ export class GameloopService {
         console.log(this._stateMachina.lifePlayer)
 
       }
-      if ((this._stateMachina.moveState === ATTACK) && Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) {
+      if ((this._stateMachina.moveState === ATTACK) && (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) && Math.abs(this._stateMachina.charY - monster.monsterY) < 0.6) {
         this._mapService.monsters.splice(parseInt(index), 1)
         this.soundSwordMonster = new Audio();
         this.soundSwordMonster.src = 'assets/sound/sword-monster.mp3';
