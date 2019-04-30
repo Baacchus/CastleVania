@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MapService } from './map.service';
+import { MapService} from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
 import { Router } from '@angular/router';
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -62,7 +63,7 @@ export class GameloopService {
       this._stateMachina.powerJump = 0;
     }
 
-    if (this._stateMachina.powerJump > 0) {
+    if (this._stateMachina.powerJump > 0)  {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
       this.scrollBlock();
@@ -70,8 +71,16 @@ export class GameloopService {
 
     this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime() 
 
-
-    requestAnimationFrame(() => this.logic()); //setinterval => request...
+  // if(this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 2){
+  //   this._stateMachina.powerJump = 5;
+  //   this._stateMachina.powerJump -= 1.2;
+  //   this.canJump = false;
+  //   this._stateMachina.charY -= 0.12; 
+    
+  // }
+  
+  
+  requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
 
   play() {
@@ -97,11 +106,11 @@ export class GameloopService {
           monster.direction = MOVE_RIGHT;
         }
       }
-      if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
+      if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.1) {
         this.router.navigate(['gameOver']);
 
       }
-      if ((this._stateMachina.moveState === ATTACK) && (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) && Math.abs(this._stateMachina.charY - monster.monsterY) < 0.6) {
+      if ((this._stateMachina.moveState === ATTACK) && (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) && Math.abs(this._stateMachina.charY - monster.monsterY) < 0.7) {
         this._mapService.monsters.splice(parseInt(index), 1)
         this.soundSwordMonster = new Audio();
         this.soundSwordMonster.src = 'assets/sound/sword-monster.mp3';
