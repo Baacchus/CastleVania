@@ -60,9 +60,6 @@ export class GameloopService {
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
-      if (this._stateMachina.powerJump === 1) {
-        this.scrollBlock();
-      }
       this.scrollBlock();
     }
 
