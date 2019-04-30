@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StateMachineService, } from '../services/state-machine.service';
+import { GameloopService } from '../services/gameloop.service';
 
 @Component({
  selector: 'app-interface',
@@ -7,15 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterfaceComponent implements OnInit {
 
- time: number = 1;
+constructor(private stateMachine: StateMachineService, private loop: GameloopService) { }
 
- constructor() { }
 
  ngOnInit() {
 
-   setInterval(() => { if (this.time > 0) this.time++; }, 1000);
- }
-
-
-
+ 
+    }
 }
+ 
