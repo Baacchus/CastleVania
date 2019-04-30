@@ -46,16 +46,16 @@ export class PlayerComponent implements OnInit {
         this.stateMachina.beforeLasteState = this.stateMachina.lastState;
         break;
       case 32:
-        this.stateMachina.beforeLasteState = this.stateMachina.lastState
+        this.stateMachina.beforeLasteState = this.stateMachina.lastState;
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 3;
         break;
       case 13:
         this.stateMachina.setMoveState(MOVE_NULL);
-        this.soundLand = new Audio()
-        this.soundLand.src = "assets/sound/sword-void.mp3"
-        this.soundLand.load()
-        this.soundLand.play()
+        this.soundLand = new Audio();
+        this.soundLand.src = 'assets/sound/sword-void.mp3';
+        this.soundLand.load();
+        this.soundLand.play();
         this.stateMachina.lastState = 4;
         break;
     }
