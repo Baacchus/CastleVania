@@ -45,25 +45,6 @@ body {
   width: 30px;
   height: 20px;
 }
-
-.transform-life {
-  background: url("https://i.imgur.com/NBt32sN.png") repeat-x;
-  background-repeat: repeat-x;
-  position: absolute;
-  margin: -18px 0 0 125px;
-  float: left;
-  width: 20px;
-  height: 20px;}
-
-.transform-life1 {
-  background: url("https://i.imgur.com/NBt32sN.png") repeat-x;
-  background-repeat: repeat-x;
-  position: absolute;
-  margin: -18px 0 0 125px;
-  float: left;
-  width: 20px;
-  height: 20px;
-}
 /*.enemy-life {  (QUESTION?)
   background: url(https://i.imgur.com/c9jbXjQ.png) repeat-x;
   background-repeat: repeat-x;
