@@ -2,13 +2,6 @@ import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
 import { Monster, Wolf } from '../monster/monster';
-
-
-
-
-// const  LOOP_INTERVAL = 50;
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -56,7 +49,7 @@ export class GameloopService {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
     }
-
+  
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
   }
@@ -68,6 +61,7 @@ export class GameloopService {
   moveMonster() {
     for (let index in this._mapService.monsters) {
       const monster = this._mapService.monsters[index];
+      
 
       if (monster.direction === MOVE_RIGHT) {
         monster.monsterX += 0.05;
@@ -82,7 +76,8 @@ export class GameloopService {
         }
       }
       if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
-        console.log(this._stateMachina.lifePlayer)
+        Math.round(this._stateMachina.lifePlayer -= 0.0625);
+        console.log("Ma vie :" + this._stateMachina.lifePlayer )
       }
       if ((this._stateMachina.moveState === ATTACK) && Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) {
         this._mapService.monsters.splice(parseInt(index), 1)
