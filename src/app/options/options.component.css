@@ -16,10 +16,10 @@
 
   .fondNoir{
     width: 50%;
-    height: 400px;
+    height: 550px;
     position: absolute;
     left:25%;
-    top:30%;
+    top:20%;
     background-color: RGBa(0, 0, 0, 0.8);
     border-radius: 15px;
     display: flex;
@@ -34,7 +34,7 @@
     /*  background-color: green; */
     flex-direction: column;
     display: flex;
-    top: 20%; 
+    top: 10%; 
     left:30%;   
   }
 
@@ -44,6 +44,15 @@
     margin-left:25%;
     font-family: "bradley_gratis", arial;
     font-size: 40px;
+  }
+
+  .attack{
+    color: white;
+    font-family: "bradley_gratis", arial;
+    font-size: 40px;
+    position: absolute;
+    top: 98%;
+    left: 25%;
   }
 
   .jump{
@@ -65,6 +74,23 @@
     float:left;
   }
 
+ 
+   
+
+  .touchq{
+  
+    top: 100%;
+    position: absolute;
+    left: 3%;
+    float: left;
+  
+    width: 12%;
+   /*  margin-left: 5%; */
+
+  }
+  
+
+
   .titre{
     width: 30%;
     position: absolute;
@@ -76,9 +102,9 @@
     font-family: 'bradley_gratis', arial;
     font-size: 5em;
     vertical-align: middle;
-    top: 25%;
+    top: 15%;
     margin: 0px;
-     background-image: url(../../assets/flammes.jpeg);
+    background-image: url(../../assets/flammes.jpeg);
     background-size: cover;
   }
   
