@@ -30,21 +30,25 @@ export class GameloopService {
     if (this._stateMachina.moveState === MOVE_LEFT) {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX - 1)] === 0) {
         this._stateMachina.charX -= 0.1;
+        this.scrollBlock();
       }
     }
     else if (this._stateMachina.moveState === MOVE_RIGHT) {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
         this._stateMachina.charX += 0.1;
+        this.scrollBlock();
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
       this._stateMachina.powerJump = 30;
       this.canJump = false;
+      this.scrollBlock();
     }
 
 
     if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 0)) {
       this._stateMachina.charY += 0.09;
+      this.scrollBlock();
     }
 
     if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
@@ -55,6 +59,8 @@ export class GameloopService {
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
+      this.scrollBlock();
+
     }
 
 
@@ -89,4 +95,9 @@ export class GameloopService {
       }
     }
   }
+
+  scrollBlock() {
+    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) -50, this._stateMachina.charY * 50)
+  }
+
 }
