@@ -9,13 +9,15 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
+  public soundSwordVoid: any;
+
   constructor(public stateMachina: StateMachineService, public gameloop: GameloopService) { }
 
   ngOnInit() {
   }
 
   @HostListener('document:keydown', ['$event']) onKeydown(event: KeyboardEvent) {
-    //event.preventDefault(); //bloque le scroll
+    event.preventDefault(); //bloque le scroll
     switch (event.keyCode) {
       case 39:
         console.log(" >>>  DROITE ");
@@ -39,30 +41,29 @@ export class PlayerComponent implements OnInit {
   @HostListener('document:keyup', ['$event']) onKeyup(event: KeyboardEvent) {
     switch (event.keyCode) {
       case 39:
-        console.log("STOP");
+        console.log('STOP');
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 2;
         break;
       case 37:
-        console.log("STOP");
+        console.log('STOP');
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 1;
         this.stateMachina.beforeLasteState = this.stateMachina.lastState;
         break;
       case 32:
-        console.log("STOP");
-        this.stateMachina.beforeLasteState = this.stateMachina.lastState
+        console.log('STOP');
+        this.stateMachina.beforeLasteState = this.stateMachina.lastState;
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 3;
         break;
       case 13:
-        console.log("STOP");
+        console.log('STOP');
         this.stateMachina.setMoveState(MOVE_NULL);
-        this.soundLand = new Audio();
-        this.soundLand.src = 'assets/sound/sword-void.mp3';
-        this.soundLand.load();
-        this.soundLand.play();
-
+        this.soundSwordVoid = new Audio();
+        this.soundSwordVoid.src = 'assets/sound/sword-void.mp3';
+        this.soundSwordVoid.load();
+        this.soundSwordVoid.play();
         this.stateMachina.lastState = 4;
 
         break;
