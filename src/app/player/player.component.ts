@@ -28,7 +28,7 @@ export class PlayerComponent implements OnInit {
       case 32:
         this.stateMachina.setMoveState(MOVE_JUMP);
         break;
-      case 13:
+      case 70:
         this.stateMachina.setMoveState(ATTACK);
         break;
     }
@@ -50,7 +50,7 @@ export class PlayerComponent implements OnInit {
         this.stateMachina.setMoveState(MOVE_NULL);
         this.stateMachina.lastState = 3;
         break;
-      case 13:
+      case 70:
         this.stateMachina.setMoveState(MOVE_NULL);
         this.soundSwordVoid = new Audio();
         this.soundSwordVoid.src = 'assets/sound/sword-void.mp3';
