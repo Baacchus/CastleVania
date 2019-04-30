@@ -17,14 +17,13 @@ export class GameloopService {
 
   public move: number;
   public canJump: Boolean = true;
-  public distChara: number = 0;
+  public soundSwordMonster: any;
+  public soundJump: any;
 
   constructor(private _stateMachina: StateMachineService, private _mapService: MapService, ) { }
 
   logic() {
     this.moveMonster();
-
-    // this.distChara = Math.abs(this._stateMachina.charX - this._mapService.)
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX - 1)] === 0) {
@@ -41,10 +40,10 @@ export class GameloopService {
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
       this._stateMachina.powerJump = 30;
       this.canJump = false;
-      this.soundLand = new Audio()
-      this.soundLand.src = "assets/sound/hero-land.mp3"
-      this.soundLand.load()
-      this.soundLand.play()
+      this.soundJump = new Audio();
+      this.soundJump.src = 'assets/sound/hero-jump.mp3';
+      this.soundJump.load();
+      this.soundJump.play();
       this.scrollBlock();
     }
 
@@ -61,15 +60,10 @@ export class GameloopService {
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
       this._stateMachina.powerJump -= 1.2;
-
       if (this._stateMachina.powerJump === 1) {
         this.scrollBlock();
       }
-
-      
       this.scrollBlock();
-
-
     }
 
 
@@ -99,17 +93,21 @@ export class GameloopService {
       if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
 
         Math.round(this._stateMachina.lifePlayer -= 0.0625);
-        console.log("Ma vie :" + this._stateMachina.lifePlayer)
+        console.log('Ma vie :' + this._stateMachina.lifePlayer)
         console.log(this._stateMachina.lifePlayer)
 
       }
       if ((this._stateMachina.moveState === ATTACK) && Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) {
         this._mapService.monsters.splice(parseInt(index), 1)
+        this.soundSwordMonster = new Audio();
+        this.soundSwordMonster.src = 'assets/sound/sword-monster.mp3';
+        this.soundSwordMonster.load();
+        this.soundSwordMonster.play();
       }
     }
   }
 
   scrollBlock() {
-    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) -50, this._stateMachina.charY * 50)
+    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 50, this._stateMachina.charY * 50)
   }
 }
