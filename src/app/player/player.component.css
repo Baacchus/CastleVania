@@ -47,7 +47,6 @@
     transform: scaleX(-1);
 }
 
-
 @keyframes sprite_run {
     from {
         background-position: 0;
