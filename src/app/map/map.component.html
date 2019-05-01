@@ -8,8 +8,8 @@
       </div>
     </div>
 
-    <div *ngFor="let monster of mapService.monsters" class="wolf" 
-    [ngStyle]="{top: '' + monster.monsterY* 52 + 'px', left: '' + monster.monsterX * 52 + 'px'}"
+    <div *ngFor="let monster of mapService.monsters" class="{{monster.className}}" 
+    [ngStyle]="{top: '' + monster.monsterY* 54 + 'px', left: '' + monster.monsterX * 54 + 'px'}"
     [ngClass]="{'scale': monster.direction === 2}"
     ></div>
   </div>
@@ -25,7 +25,7 @@
 
 
 <div class="logo">
-  <img src="../../assets/logo.png"/></div>
+  <img src="/assets/logo.png"/></div>
 
 <div class="textplay">WILD CODE SCHOOL CO. LTD.</div>
 <br>

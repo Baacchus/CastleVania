@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Wolf } from '../monster/monster';
-
+import { Wolf, Ghost, Monster } from '../monster/monster';
 
 export const MOVE_LEFT = 1;
 export const MOVE_RIGHT = 2;
@@ -8,16 +7,13 @@ export const MOVE_NULL = 0;
 export const MOVE_JUMP = 3;
 export const ATTACK = 4;
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class StateMachineService {
 
   moveState: number = 0;
-  lastState: number =0;
+  lastState: number = 0;
   beforeLasteState: number = 2;
   charX: number = 1;
   charY: number = 8.15;
@@ -25,7 +21,7 @@ export class StateMachineService {
 
   lifePlayer: number = 4;
   public move: any = 0;
-  public monsters: Wolf[] = [new Wolf(4, 8), new Wolf(8,5)]
+  public monsters: Monster[] = [new Wolf(4, 8, 3, 1), new Wolf(8,5,2,2), new Ghost(15,3,0,0)]
   public startTime: Date;
   public gameDuration: number = 0;
   public endTime: Date;
