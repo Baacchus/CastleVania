@@ -2,6 +2,8 @@ import { Monster } from './../monster/monster';
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
+import {Router}  from  '@angular/router';
+
 
 
 @Injectable({
@@ -16,7 +18,7 @@ export class GameloopService {
   public soundSwordMonster: any;
   public soundJump: any;
 
-  constructor(private _stateMachina: StateMachineService, private _mapService: MapService, ) { }
+  constructor(private _stateMachina: StateMachineService, private _mapService: MapService,  private router: Router) { }
 
   playGameMainTheme(){
     this.mainTheme = new Audio();
@@ -103,7 +105,7 @@ export class GameloopService {
           monster.direction = MOVE_RIGHT;
         }
       }
-      if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.1) {
+      if ((Math.abs(this._stateMachina.charX - monster.monsterX) < 0.1) && (Math.abs(this._stateMachina.charY - monster.monsterY) < 0.1)) {
         this.router.navigate(['gameOver']);
 
       }
