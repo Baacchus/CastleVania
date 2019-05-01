@@ -27,20 +27,38 @@
   background-position: bottom center !important;
   width: 64px;
   height: 32px;
-  background: url(../../assets/wolf.png);
+  background: url(/assets/wolf.png);
   position: absolute;
-  animation: moveX 300ms steps(12) infinite;
+  animation: wolfmove 300ms steps(12) infinite;
+}
+.ghost {
+  background-repeat: no-repeat !important;
+  background-position: bottom center !important;
+  width: 64px;
+  height: 60px;
+  background: url(/assets/ghost-idle.png);
+  position: absolute;
+  animation: ghostmove 750ms steps(7) infinite;
 }
 .scale{
   transform: scaleX(-1)
 }
 
-@keyframes moveX {
+@keyframes wolfmove {
   from {
     background-position-x: 0px;
   }
   to {
     background-position-x: -768px;
+  }
+}
+
+@keyframes ghostmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -448px;
   }
 }
 

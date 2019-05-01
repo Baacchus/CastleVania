@@ -1,6 +1,10 @@
+import { Monster } from './../monster/monster';
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
+import {Router}  from  '@angular/router';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +18,7 @@ export class GameloopService {
   public soundSwordMonster: any;
   public soundJump: any;
 
-  constructor(private _stateMachina: StateMachineService, private _mapService: MapService, ) { }
+  constructor(private _stateMachina: StateMachineService, private _mapService: MapService,  private router: Router) { }
 
   playGameMainTheme(){
     this.mainTheme = new Audio();
@@ -59,6 +63,12 @@ export class GameloopService {
       this.canJump = true;
       this._stateMachina.powerJump = 0;
     }
+    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 2 )) {
+      this.canJump = true;
+      this._stateMachina.powerJump = 0;
+      this._stateMachina.charY  +=  0.9;
+      
+    }
 
     if (this._stateMachina.powerJump > 0) {
       this._stateMachina.charY -= 0.12;
@@ -74,7 +84,7 @@ export class GameloopService {
 
   play() {
     this._stateMachina.startTime = new Date()
-    this.playGameMainTheme()
+    //this.playGameMainTheme()
     this.logic();
    
   }
@@ -95,11 +105,8 @@ export class GameloopService {
           monster.direction = MOVE_RIGHT;
         }
       }
-      if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
-
-        Math.round(this._stateMachina.lifePlayer -= 0.0625);
-        console.log('Ma vie :' + this._stateMachina.lifePlayer)
-        console.log(this._stateMachina.lifePlayer)
+      if ((Math.abs(this._stateMachina.charX - monster.monsterX) < 0.1) && (Math.abs(this._stateMachina.charY - monster.monsterY) < 0.1)) {
+        this.router.navigate(['gameOver']);
 
       }
       if ((this._stateMachina.moveState === ATTACK) && (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) && Math.abs(this._stateMachina.charY - monster.monsterY) < 0.6) {
