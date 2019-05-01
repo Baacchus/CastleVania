@@ -58,9 +58,16 @@ export class GameloopService {
       this.scrollBlock();
     }
 
-    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] != 0)) {
+    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] ===1 )) {
       this.canJump = true;
       this._stateMachina.powerJump = 0;
+
+    }
+    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 2 )) {
+      this.canJump = true;
+      this._stateMachina.powerJump = 0;
+      this._stateMachina.charY  +=  0.9;
+      
     }
 
     if (this._stateMachina.powerJump > 0)  {
@@ -71,11 +78,9 @@ export class GameloopService {
 
     this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime() 
 
-  // if(this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 2){
-  //   this._stateMachina.powerJump = 5;
-  //   this._stateMachina.powerJump -= 1.2;
-  //   this.canJump = false;
-  //   this._stateMachina.charY -= 0.12; 
+  // if((this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 2) &&  this.canJump=== false){
+  //   this._stateMachina.charY += 0;
+  //   this._stateMachina.powerJump = 0;
     
   // }
   
