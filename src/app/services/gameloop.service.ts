@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -102,11 +103,8 @@ export class GameloopService {
           monster.direction = MOVE_RIGHT;
         }
       }
-      if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
-
-        Math.round(this._stateMachina.lifePlayer -= 0.0625);
-        console.log('Ma vie :' + this._stateMachina.lifePlayer)
-        console.log(this._stateMachina.lifePlayer)
+      if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.1) {
+        this.router.navigate(['gameOver']);
 
       }
       if ((this._stateMachina.moveState === ATTACK) && (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.6) && Math.abs(this._stateMachina.charY - monster.monsterY) < 0.6) {
