@@ -97,6 +97,7 @@ export class GameloopService {
         }
       }
       if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
+        
 
         Math.round(this._stateMachina.lifePlayer -= 0.0625);
         console.log('Ma vie :' + this._stateMachina.lifePlayer)
