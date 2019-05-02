@@ -1,3 +1,4 @@
+import { MapService } from './map.service';
 import { Injectable } from '@angular/core';
 import { Wolf, Ghost, Monster, Beast } from '../monster/monster';
 
@@ -19,6 +20,7 @@ export class StateMachineService {
   charX: number = 1;
   charY: number = 8;
   powerJump: number = 0;
+  ISITWIN = [138][8];
 
   lifePlayer: number = 4;
   public move: any = 0;
@@ -34,9 +36,16 @@ export class StateMachineService {
   public gameDuration: number = 0;
   public endTime: Date;
 
-  constructor() { }
+  constructor(public mapService : MapService) { }
 
   setMoveState(state: number) {
     this.moveState = state;
+  }
+  
+  isItWin(){
+    if (this.mapService.map[Math.trunc(this.charY)][Math.round(this.charX)] === this.ISITWIN){
+      return true
+    }
+    else return false;
   }
 }

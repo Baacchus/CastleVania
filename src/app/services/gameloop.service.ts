@@ -41,10 +41,10 @@ export class GameloopService {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
         this._stateMachina.charX += 0.1;
         this.scrollBlock();
-
+/* 
         if (this._stateMachina.charX > 138) {
           this.router.navigate(['/youWin']);
-        }
+        } */
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
@@ -83,7 +83,8 @@ export class GameloopService {
     this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime()
 
 
-    requestAnimationFrame(() => this.logic()); //setinterval => request...
+    requestAnimationFrame(() => this.logic());
+    this._stateMachina.isItWin();
   }
 
   play() {
@@ -91,7 +92,6 @@ export class GameloopService {
     // this.playGameMainTheme()
     this.logic();
     this.resetGame();
-    // this.reInit();
   }
 
   moveMonster() {
@@ -155,18 +155,5 @@ export class GameloopService {
     this._stateMachina.endTime;
     this._stateMachina.setMoveState(this._stateMachina.moveState);
   } 
-
-  // reInit() {
-
-  //   this._stateMachina.moveState = 0;
-  //   this._stateMachina.lastState =  0;
-  //   this._stateMachina.beforeLasteState =  2;
-  //   this._stateMachina.charX =  1;
-  //   this._stateMachina.charY =  8.15;
-  //   this._stateMachina.powerJump =  0;
-  //   this._stateMachina.lifePlayer =  4;
-  //  this._stateMachina.move = 0;
-  //  this._stateMachina.monsters = [new Wolf(4, 8, 3, 1), new Wolf(8,5,2,2), new Ghost(15,3,0,0),  new Beast(4,5,0,0)]
-  // }
 }
 
