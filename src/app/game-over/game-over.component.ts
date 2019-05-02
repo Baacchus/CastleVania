@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameloopService } from '../services/gameloop.service';
 
 @Component({
   selector: 'app-game-over',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameOverComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameLoop: GameloopService) { }
 
   ngOnInit() {
   }

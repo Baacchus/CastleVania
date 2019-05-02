@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
-
 #screen {
   width: 700px;
   height: 502px;
@@ -31,16 +30,28 @@
   position: absolute;
   animation: wolfmove 300ms steps(12) infinite;
 }
+
 .ghost {
   background-repeat: no-repeat !important;
   background-position: bottom center !important;
-  width: 64px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: url(/assets/ghost-idle.png);
   position: absolute;
-  animation: ghostmove 750ms steps(7) infinite;
+  animation: ghostmove 500ms steps(7) infinite;
 }
-.scale{
+
+.beast {
+  background-repeat: no-repeat !important;
+  background-position: bottom center !important;
+  width: 55px;
+  height: 67px;
+  background: url(/assets/hell-beast-idle.png);
+  position: absolute;
+  animation: beastmove 1s steps(6) infinite;
+}
+
+.scale {
   transform: scaleX(-1)
 }
 
@@ -58,25 +69,33 @@
     background-position-x: 0px;
   }
   to {
-    background-position-x: -448px;
+    background-position-x: -350px;
   }
 }
 
+@keyframes beastmove {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -330px;
+  }
+}
 
 .backPicture {
-  background-size:cover;
+  background-size: cover;
   width: 100%;
   height: 50%;
-  margin:auto;
+  margin: auto;
   background-color: black;
   position: fixed;
   z-index: 3;
   font: normal 0.8em 'Press Start 2P', Monospace, Verdana, sans-serif;
-}  
+}
 
 .player-life {
- /*  background: url("https://i.imgur.com/NBt32sN.png") repeat-x; */
- /*  background-repeat: repeat-x; */
+  /*  background: url("https://i.imgur.com/NBt32sN.png") repeat-x; */
+  /*  background-repeat: repeat-x; */
   position: relative;
   height: 20px;
   width: 10px;
@@ -84,8 +103,6 @@
   display: inline-block;
   margin: 0.1%;
   top: 30%
-  
-
 }
 
 .time {
