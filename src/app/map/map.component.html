@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div *ngFor="let monster of mapService.monsters" class="wolf" 
+    <div *ngFor="let monster of mapService.monsters" class="{{monster.className}}" 
     [ngStyle]="{top: '' + monster.monsterY* 53 + 'px', left: '' + monster.monsterX * 52 + 'px'}"
     [ngClass]="{'scale': monster.direction === 2}"
     ></div>
