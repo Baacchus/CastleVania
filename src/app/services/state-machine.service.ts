@@ -22,12 +22,12 @@ export class StateMachineService {
 
   lifePlayer: number = 4;
   public move: any = 0;
-  public monsters: Monster[] = [new Wolf(4, 8, 3, 1), new Wolf(8,5,2,2), new Ghost(15,3,0,0),  new Beast(4,5,0,0)]
+  public monsters: Monster[] = [new Wolf(6, 8, 1, 1), new Wolf(8, 5, 2, 2), new Ghost(15, 3, 0, 0), new Beast(4, 5, 0, 0)]
   public startTime: Date;
   public gameDuration: number = 0;
   public endTime: Date;
 
-  constructor() {  }
+  constructor() { }
 
   setMoveState(state: number) {
     this.moveState = state;
