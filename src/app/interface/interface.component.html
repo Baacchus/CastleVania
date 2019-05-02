@@ -1,0 +1,38 @@
+<div id="background">
+  <div>
+    <app-map></app-map>
+  </div>
+  <div class="banner">
+    <h5><span class="score">SCORE : 00000</span>
+    <span class="time">{{ loop._stateMachina.gameDuration | date: 'mm:ss'}}</span>
+    <span class="stage">STAGE 01</span></h5>
+    <h5>PLAYER : <div class="player-life"></div></h5>
+
+    <div id="item-box">
+      <div id="item"></div>
+    </div>
+
+
+  </div>
+</div>
+<div id="player"></div>
+
+<div class="imageBack">
+
+</div>
+
+<a [routerLink]="['/background']">
+  <img class="boutonHome" src="../../assets/home.png" alt="home" />
+</a>
+
+<!--  boutton à suprimmer -->
+<a [routerLink]="['/gameOver']">
+<button class="gameOver">game Over</button></a>
+
+<!--  boutton à suprimmer -->
+<a [routerLink]="['/youWin']">
+  <button class="Win">Win</button></a>
+
+<audio id="song" autoplay>
+  <source src="musique du jeux">
+</audio>

@@ -1,19 +1,53 @@
-<body>
-  <h1>Castlevania Quizz</h1>
-  <div id="ecran">
-    <div id="zone">
-      <div id="pers">X</div>
-      <div class="floor"></div>
-      <div id="question1">1</div>
-      <div id="question2">2</div>
-      <div id="question3">3</div>
-      <div id="question4">4</div>
-      <div id="question5">5</div>
-      <div id="question6">6</div>
-      <div id="question7">7</div>
-      <div id="question8">8</div>
-      <div id="question9">9</div>
-      <div id="question10">BOSS</div>
+<div id="screen">
+
+    <app-player></app-player>
+  <div id="map">
+    <div class="row" *ngFor="let row of map">
+      <div class="col" *ngFor="let col of row" [ngStyle]="{'background-image': assets[col].url}"> 
+        
+      </div>
     </div>
+
+    <div *ngFor="let monster of mapService.monsters" class="{{monster.className}}" 
+    [ngStyle]="{top: '' + monster.monsterY* 53 + 'px', left: '' + monster.monsterX * 52 + 'px'}"
+    [ngClass]="{'scale': monster.direction === 2}"
+    ></div>
   </div>
-</body>
+
+
+  <div class="backPicture">
+
+
+
+<h2 class="time">TIME: {{ gameLoop._stateMachina.gameDuration | date: 'mm:ss'}}</h2>
+
+<h2 class="stage">STAGE 01</h2>
+
+
+<div class="logo">
+  <img src="/assets/logo.png"/></div>
+
+<div class="textplay">WILD CODE SCHOOL CO. LTD.</div>
+<br>
+<div class="textplay">LICENSED BY NINTENDO 2019</div>
+
+<div class="player-life"></div>
+<div class="player-life"></div>
+<div class="player-life"></div>
+
+
+
+
+<!-- <div class="home">
+  <img src="../../assets/homeblanc.png"/>
+</div> -->
+
+
+<div></div>
+
+
+
+
+  </div>
+
+</div>

@@ -1,0 +1,84 @@
+.player-move {
+    background-repeat: no-repeat !important;
+    background-position: bottom center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(/assets/gothic-hero-run_final.png);
+    animation: sprite_run 1s steps(12) infinite;
+}
+
+.player-stop {
+    background-repeat: no-repeat !important;
+    background-position: bottom center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(/assets/gothic-hero-idle_final.png);
+    animation: sprite_stop 1s steps(4) infinite;
+}
+
+
+.transform{
+    transform: scaleX(-1);}
+    
+.player-jump {
+    background-repeat: no-repeat !important;
+    background-position: bottom center;
+    position: absolute;
+    width: 61px;
+    height: 50px;
+    background: url(/assets/gothic-hero-jump.png);
+    animation: sprite_jump 1s steps(5) infinite;
+}
+
+.player-attack {
+    background-repeat: no-repeat !important;
+    background-position: bottom center;
+    position: absolute;
+    width: 96px;
+    height: 50px;
+    background: url(/assets/gothic-hero-attack.png);
+    animation: sprite_attack 100ms steps(6) infinite;
+}
+
+
+.transform {
+    transform: scaleX(-1);
+}
+
+@keyframes sprite_run {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -600px;
+    }
+}
+
+@keyframes sprite_stop {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -200px;
+    }
+}
+
+@keyframes sprite_jump {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -305px;
+    }
+}
+
+@keyframes sprite_attack {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -576px;
+    }
+}
