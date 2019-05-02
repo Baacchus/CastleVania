@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
-import {Router}  from  '@angular/router';
-
-
+import { Router } from '@angular/router';
+import { Wolf } from '../monster/monster';
 
 @Injectable({
   providedIn: 'root'
@@ -16,19 +15,20 @@ export class GameloopService {
   public mainTheme: any;
   public soundSwordMonster: any;
   public soundJump: any;
+  public gameOver: any;
 
-  constructor(private _stateMachina: StateMachineService, private _mapService: MapService,  private router: Router) { }
+  constructor(private _stateMachina: StateMachineService, private _mapService: MapService, private router: Router) { }
 
-  playGameMainTheme(){
+  playGameMainTheme() {
     this.mainTheme = new Audio();
     this.mainTheme.src = '/assets/sound/uefa-champions-league.mp3';
     this.mainTheme.load();
     this.mainTheme.volume = 0.7;
-    this.mainTheme.play()
+    this.mainTheme.play();
   }
 
   logic() {
-    
+
     this.moveMonster();
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
@@ -75,7 +75,7 @@ export class GameloopService {
       this.scrollBlock();
     }
 
-    this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime() 
+    this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime()
 
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
@@ -85,7 +85,6 @@ export class GameloopService {
     this._stateMachina.startTime = new Date()
     //this.playGameMainTheme()
     this.logic();
-   
   }
 
   moveMonster() {
@@ -119,6 +118,24 @@ export class GameloopService {
   }
 
   scrollBlock() {
-    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 50, this._stateMachina.charY * 50)
+    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 66, this._stateMachina.charY * 50)
   }
+
+  /* resetGame() {
+    this._stateMachina.moveState = 0;
+    this._stateMachina.lastState = 0;
+    this._stateMachina.beforeLasteState = 2;
+    this._stateMachina.charX = 1;
+    this._stateMachina.charY = 8;
+    this._stateMachina.powerJump = 0;
+
+    this._stateMachina.lifePlayer = 4;
+    this._stateMachina.move = 0;
+    this._stateMachina.monsters = [new Wolf(4, 8), new Wolf(8, 5)]
+    this._stateMachina.startTime;
+    this._stateMachina.gameDuration = 0;
+    this._stateMachina.endTime;
+    this._stateMachina.setMoveState(this._stateMachina.moveState);
+  } */
 }
+8

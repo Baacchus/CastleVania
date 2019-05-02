@@ -19,6 +19,7 @@ export class Ghost extends Monster {
     constructor(public monsterX: number, public monsterY: number, public amplitude: number, direction: number) {
         super('ghost', monsterX, monsterY, amplitude, direction)
     }
+
 }
 
 export class Beast extends Monster {
@@ -26,3 +27,4 @@ export class Beast extends Monster {
         super('beast', monsterX, monsterY, amplitude, direction)
     }
 }
+

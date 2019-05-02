@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameloopService } from '../services/gameloop.service';
 
 @Component({
   selector: 'app-background',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackgroundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameLoop: GameloopService) { }
 
   ngOnInit() {
+    this.gameLoop.play();
   }
 
 }

@@ -17,7 +17,7 @@ export class StateMachineService {
   lastState: number = 0;
   beforeLasteState: number = 2;
   charX: number = 1;
-  charY: number = 8.15;
+  charY: number = 8;
   powerJump: number = 0;
 
   lifePlayer: number = 4;
