@@ -41,6 +41,10 @@ export class GameloopService {
       if (this._mapService.map[Math.trunc(this._stateMachina.charY)][Math.round(this._stateMachina.charX + 1)] === 0) {
         this._stateMachina.charX += 0.1;
         this.scrollBlock();
+
+        if (this._stateMachina.charX > 138){
+          this.router.navigate(['/youWin']);
+        }
       }
     }
     else if (this._stateMachina.moveState === MOVE_JUMP && this.canJump) {
