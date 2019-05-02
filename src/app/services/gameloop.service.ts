@@ -42,7 +42,7 @@ export class GameloopService {
         this._stateMachina.charX += 0.1;
         this.scrollBlock();
 
-        if (this._stateMachina.charX > 138){
+        if (this._stateMachina.charX > 138) {
           this.router.navigate(['/youWin']);
         }
       }
@@ -66,10 +66,10 @@ export class GameloopService {
       this.canJump = true;
       this._stateMachina.powerJump = 0;
     }
-    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 2 )) {
+    if (this._stateMachina.powerJump <= 0 && (this._mapService.map[Math.trunc(this._stateMachina.charY + 1)][Math.round(this._stateMachina.charX)] === 2)) {
       this.canJump = true;
       this._stateMachina.powerJump = 0;
-      this._stateMachina.charY  +=  0.9;
+      this._stateMachina.charY += 0.9;
     }
 
     if (this._stateMachina.powerJump > 0) {
