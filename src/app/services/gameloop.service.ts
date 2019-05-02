@@ -1,4 +1,4 @@
-import { Monster } from './../monster/monster';
+import { Monster, Wolf, Ghost, Beast } from './../monster/monster';
 import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
@@ -15,9 +15,9 @@ export class GameloopService {
   public soundSwordMonster: any;
   public soundJump: any;
 
-  constructor(private _stateMachina: StateMachineService, private _mapService: MapService, ) { }
+  constructor(private _stateMachina: StateMachineService, private _mapService: MapService) { }
 
-  playGameMainTheme(){
+  playGameMainTheme() {
     this.mainTheme = new Audio();
     this.mainTheme.src = '/assets/sound/uefa-champions-league.mp3';
     this.mainTheme.load();
@@ -26,7 +26,7 @@ export class GameloopService {
   }
 
   logic() {
-    
+
     this.moveMonster();
 
     if (this._stateMachina.moveState === MOVE_LEFT) {
@@ -67,7 +67,7 @@ export class GameloopService {
       this.scrollBlock();
     }
 
-    this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime() 
+    this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime()
 
 
     requestAnimationFrame(() => this.logic()); //setinterval => request...
@@ -76,8 +76,9 @@ export class GameloopService {
   play() {
     this._stateMachina.startTime = new Date()
     //this.playGameMainTheme()
+    this.reInit()
     this.logic();
-   
+
   }
 
   moveMonster() {
@@ -97,7 +98,7 @@ export class GameloopService {
         }
       }
       if (Math.abs(this._stateMachina.charX - monster.monsterX) < 0.2) {
-        
+
 
         Math.round(this._stateMachina.lifePlayer -= 0.0625);
         console.log('Ma vie :' + this._stateMachina.lifePlayer)
@@ -116,5 +117,18 @@ export class GameloopService {
 
   scrollBlock() {
     window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 50, this._stateMachina.charY * 50)
+  }
+
+  reInit() {
+
+    this._stateMachina.moveState = 0;
+    this._stateMachina.lastState =  0;
+    this._stateMachina.beforeLasteState =  2;
+    this._stateMachina.charX =  1;
+    this._stateMachina.charY =  8.15;
+    this._stateMachina.powerJump =  0;
+    this._stateMachina.lifePlayer =  4;
+   this._stateMachina.move = 0;
+   this._stateMachina.monsters = [new Wolf(4, 8, 3, 1), new Wolf(8,5,2,2), new Ghost(15,3,0,0),  new Beast(4,5,0,0)]
   }
 }
