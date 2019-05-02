@@ -17,7 +17,7 @@ export const ATTACK = 4;
 export class StateMachineService {
 
   moveState: number = 0;
-  lastState: number =0;
+  lastState: number = 0;
   beforeLasteState: number = 2;
   charX: number = 1;
   charY: number = 8;
