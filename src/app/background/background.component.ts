@@ -11,7 +11,6 @@ export class BackgroundComponent implements OnInit {
   constructor(private gameLoop: GameloopService) { }
 
   ngOnInit() {
-    this.gameLoop.play();
   }
 
 }

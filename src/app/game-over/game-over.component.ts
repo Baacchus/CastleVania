@@ -11,6 +11,7 @@ export class GameOverComponent implements OnInit {
   constructor(private gameLoop: GameloopService) { }
 
   ngOnInit() {
+    this.gameLoop.resetGame();
   }
 
 }

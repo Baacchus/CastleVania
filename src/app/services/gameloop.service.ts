@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MapService } from './map.service';
 import { StateMachineService, MOVE_LEFT, MOVE_RIGHT, MOVE_JUMP, ATTACK } from './state-machine.service';
 import { Router } from '@angular/router';
-import { Wolf } from '../monster/monster';
+import { Wolf, Ghost, Beast } from '../monster/monster';
 
 @Injectable({
   providedIn: 'root'
@@ -78,6 +78,8 @@ export class GameloopService {
       this.scrollBlock();
     }
 
+    
+
     this._stateMachina.gameDuration = new Date().getTime() - this._stateMachina.startTime.getTime()
 
 
@@ -86,8 +88,10 @@ export class GameloopService {
 
   play() {
     this._stateMachina.startTime = new Date()
-    //this.playGameMainTheme()
+    // this.playGameMainTheme()
     this.logic();
+    this.resetGame();
+    // this.reInit();
   }
 
   moveMonster() {
@@ -124,21 +128,41 @@ export class GameloopService {
     window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 66, this._stateMachina.charY * 50);
   }
 
-  /* resetGame() {
+   resetGame() {
     this._stateMachina.moveState = 0;
     this._stateMachina.lastState = 0;
     this._stateMachina.beforeLasteState = 2;
     this._stateMachina.charX = 1;
     this._stateMachina.charY = 8;
     this._stateMachina.powerJump = 0;
-
+    
     this._stateMachina.lifePlayer = 4;
     this._stateMachina.move = 0;
-    this._stateMachina.monsters = [new Wolf(4, 8), new Wolf(8, 5)]
+    this._stateMachina.monsters = [new Wolf(6, 8, 1, 1), new Wolf(8, 5, 1, 1), new Wolf(15, 8, 1, 1), new Wolf(25, 8, 1, 1), new Wolf(27, 8, 1, 1),
+      new Wolf(29, 8, 1, 1), new Wolf(31, 8, 1, 1), new Wolf(97, 8, 1, 1), new Wolf(115, 8, 1, 1), new Wolf(100, 8, 1, 1), new Wolf(105, 8, 1, 1), new Wolf(25, 8, 1, 1),
+      new Ghost(93, 3.5, 0, 0), new Ghost(75, 8, 0, 0), new Ghost(75, 7.5, 0, 0), new Ghost(78, 7.5, 0, 0), new Ghost(82, 7.5, 0, 0),
+      new Beast(130, 7.3, 0, 0), new Beast(125, 7.3, 0, 0)];
+      this._mapService.monsters = [new Wolf(6, 8, 1, 1), new Wolf(8, 5, 1, 1), new Wolf(15, 8, 1, 1), new Wolf(25, 8, 1, 1), new Wolf(27, 8, 1, 1),
+        new Wolf(29, 8, 1, 1), new Wolf(31, 8, 1, 1), new Wolf(97, 8, 1, 1), new Wolf(115, 8, 1, 1), new Wolf(100, 8, 1, 1), new Wolf(105, 8, 1, 1), new Wolf(25, 8, 1, 1),
+        new Ghost(93, 3.5, 0, 0), new Ghost(75, 8, 0, 0), new Ghost(75, 7.5, 0, 0), new Ghost(78, 7.5, 0, 0), new Ghost(82, 7.5, 0, 0),
+        new Beast(130, 7.3, 0, 0), new Beast(125, 7.3, 0, 0)]
     this._stateMachina.startTime;
     this._stateMachina.gameDuration = 0;
     this._stateMachina.endTime;
     this._stateMachina.setMoveState(this._stateMachina.moveState);
-  } */
+  } 
+
+  // reInit() {
+
+  //   this._stateMachina.moveState = 0;
+  //   this._stateMachina.lastState =  0;
+  //   this._stateMachina.beforeLasteState =  2;
+  //   this._stateMachina.charX =  1;
+  //   this._stateMachina.charY =  8.15;
+  //   this._stateMachina.powerJump =  0;
+  //   this._stateMachina.lifePlayer =  4;
+  //  this._stateMachina.move = 0;
+  //  this._stateMachina.monsters = [new Wolf(4, 8, 3, 1), new Wolf(8,5,2,2), new Ghost(15,3,0,0),  new Beast(4,5,0,0)]
+  // }
 }
-8
+
