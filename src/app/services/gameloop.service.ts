@@ -70,7 +70,6 @@ export class GameloopService {
       this.canJump = true;
       this._stateMachina.powerJump = 0;
       this._stateMachina.charY  +=  0.9;
-      
     }
 
     if (this._stateMachina.powerJump > 0) {
@@ -122,7 +121,7 @@ export class GameloopService {
   }
 
   scrollBlock() {
-    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 66, this._stateMachina.charY * 50)
+    window.scroll((this._stateMachina.charX * 50) - (window.innerWidth / 2) - 66, this._stateMachina.charY * 50);
   }
 
   /* resetGame() {
