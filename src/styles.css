@@ -3,4 +3,6 @@
 html {
     background-color: black;
     margin-top: -7px ;
+    overflow-y: hidden;
+    /* overflow-x: hidden; */
 }
